@@ -2,7 +2,7 @@
 module stepper_control(clk, motor_enable, direction, out);
 	// Define inputs and outputs
 	input clk; // Clock input to drive finite state machine
-	input enable // 1 is motor on, 0 is motor off
+	input motor_enable; // 1 is motor on, 0 is motor off
 	input direction; // Bit telling motor direction to move - 0 is clockwise, 1 is counter-clockwise
 	output [3:0] out; // Output to pins connected to motor (4 for now, 6 if possible/necessary)
 	
@@ -29,7 +29,8 @@ module stepper_control(clk, motor_enable, direction, out);
 				endcase
 			end
 			else begin
-				// Determine next state to usecase(out)
+				// Determine next state to use
+				case(out)
 					4'b0000 : next_out = 4'b1000;
 					4'b1000 : next_out = 4'b1100;
 					4'b1100 : next_out = 4'b0100;
@@ -42,7 +43,7 @@ module stepper_control(clk, motor_enable, direction, out);
 				endcase
 			end
 		end
-		else
+		else begin
 			// Turn off motor
 			next_out = 4'b0000;
 		end
