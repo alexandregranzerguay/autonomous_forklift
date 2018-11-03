@@ -577,6 +577,22 @@
          type = "int";
       }
    }
+   element my_counter_0
+   {
+      datum _sortIndex
+      {
+         value = "36";
+         type = "int";
+      }
+   }
+   element my_counter_0.avalon_slave
+   {
+      datum baseAddress
+      {
+         value = "16";
+         type = "String";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -591,7 +607,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName">DE10_Nano_Computer.qpf</parameter>
+ <parameter name="projectName" value="forklift.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -2082,6 +2098,7 @@
   <parameter name="vga_clk_en" value="true" />
   <parameter name="video_in_clk_en" value="false" />
  </module>
+ <module name="my_counter_0" kind="my_counter" version="1.0" enabled="1" />
  <connection
    kind="avalon"
    version="17.1"
@@ -2589,6 +2606,15 @@
    end="JTAG_UART_for_ARM_1.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1008" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_lw_axi_master"
+   end="my_counter_0.avalon_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3164,6 +3190,11 @@
    kind="clock"
    version="17.1"
    start="System_PLL.sys_clk"
+   end="my_counter_0.clock_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="System_PLL.sys_clk"
    end="ARM_A9_HPS.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -3538,6 +3569,11 @@
    kind="reset"
    version="17.1"
    start="ARM_A9_HPS.h2f_reset"
+   end="my_counter_0.reset_reset_n" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_reset"
    end="VGA_Subsystem.sys_reset" />
  <connection
    kind="reset"
@@ -3689,6 +3725,11 @@
    version="17.1"
    start="System_PLL.reset_source"
    end="Onchip_SRAM.reset1" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="System_PLL.reset_source"
+   end="my_counter_0.reset_reset_n" />
  <connection
    kind="reset"
    version="17.1"
