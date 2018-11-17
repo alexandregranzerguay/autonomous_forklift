@@ -1,18 +1,13 @@
 // Initial attempt at stepper motor control
-module stepper_control(clk, reset, clk_div);
-	// Define inputs and outputs
-	input clk; // Raw clock input
-	input reset; // Reset
-	output reg clk_div; // Divided clock signal
-	
+module stepper_control(input clk, input reset_reset_n, output reg clk_div);
 	localparam cTime = 10000000;
 	
 	reg [31:0] count;
 	
 	// Increment the count and reset when too high
-	always @ (posedge(clk), posedge(reset))
+	always @ (posedge(clk))
 	begin
-		if (reset == 1'b1)
+		if (reset_reset_n == 1'b0)
 			count <= 32'b0;
 		else if (count == cTime - 1)
 			count <= 32'b0;
@@ -21,9 +16,9 @@ module stepper_control(clk, reset, clk_div);
 	end
 	
 	// Set the clock output
-	always @ (posedge(clk), posedge(reset))
+	always @ (posedge(clk))
 	begin
-		if (reset == 1'b1)
+		if (reset_reset_n == 1'b0)
 			clk_div <= 1'b0;
 		else if (count == cTime - 1)
 			clk_div <= ~clk_div;
