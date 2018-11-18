@@ -1,27 +1,23 @@
-// Initial attempt at stepper motor control with no direction or enable
-module stepper_control(clk, out);
-	// Define inputs and outputs
-	input clk; // Clock input to drive finite state machine
-	output [3:0] out; // Output to pins connected to motor (4 for now, 6 if possible/necessary)
-	
-	reg [3:0] out;
-	reg [3:0] next_out;
+// Initial attempt at stepper motor control
+module stepper_control(input clock_clk, input reset_low, output reg [5:0] state_out);	
+	reg [5:0] next_out;
 	
 	// Move FSM when clock cycles
-	always @(posedge clk) begin
-		// Determine next state to use
-		case(out)
-			4'b0000 : next_out = 4'b0001;
-			4'b0001 : next_out = 4'b0011;
-			4'b0011 : next_out = 4'b0010;
-			4'b0010 : next_out = 4'b0110;
-			4'b0110 : next_out = 4'b0100;
-			4'b0100 : next_out = 4'b1100;
-			4'b1100 : next_out = 4'b1000;
-			4'b1000 : next_out = 4'b1001;
-			4'b1001 : next_out = 4'b0001;
-		endcase
-		out = next_out;
+	always @(posedge clock_clk) begin
+		if (reset_low == 0) begin
+			next_out = 6'b000000;
+		end
+		else begin
+			// Determine next state to use
+			case(state_out)
+				6'b000000 : next_out = 6'b11zzz0;
+				6'b11zzz0 : next_out = 6'b11zz0z;
+				6'b11zz0z : next_out = 6'b11z0zz;
+				6'b11z0zz : next_out = 6'b110zzz;
+				6'b110zzz : next_out = 6'b11zzz0;
+			endcase
+		end
+		state_out = next_out;
 	end
 	
 endmodule
