@@ -83,7 +83,8 @@ module Computer_System (
 		input  wire        system_pll_ref_reset_reset       // system_pll_ref_reset.reset
 	);
 
-	wire         system_pll_sys_clk_clk;                                                            // System_PLL:sys_clk_clk -> [ADC:clock, ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, Arduino_GPIO:clk, Arduino_Reset_N:clk, Expansion_JP1:clk, Expansion_JP7:clk, F2H_Mem_Window_00000000:clk, F2H_Mem_Window_FF600000:clk, F2H_Mem_Window_FF800000:clk, Interval_Timer:clk, Interval_Timer_2:clk, Interval_Timer_2nd_Core:clk, Interval_Timer_2nd_Core_2:clk, JTAG_UART:clk, JTAG_UART_2nd_Core:clk, JTAG_UART_for_ARM_0:clk, JTAG_UART_for_ARM_1:clk, JTAG_to_FPGA_Bridge:clk_clk, JTAG_to_HPS_Bridge:clk_clk, LEDs:clk, Nios2:clk, Nios2_2nd_Core:clk, Nios2_2nd_Core_SRAM:clk, Nios2_SRAM:clk, Onchip_SRAM:clk, Pushbuttons:clk, Slider_Switches:clk, SysID:clock, irq_mapper_002:clk, irq_mapper_003:clk, mm_interconnect_0:System_PLL_sys_clk_clk, mm_interconnect_1:System_PLL_sys_clk_clk, my_counter_0:clock_clk, rst_controller:clk, rst_controller_003:clk, rst_controller_004:clk, rst_controller_005:clk]
+	wire         clock_divider_0_clk_div_clk;                                                       // clock_divider_0:vv_clk -> [rst_controller_005:clk, stepper_basic_0:clock_clk]
+	wire         system_pll_sys_clk_clk;                                                            // System_PLL:sys_clk_clk -> [ADC:clock, ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, Arduino_GPIO:clk, Arduino_Reset_N:clk, Expansion_JP1:clk, Expansion_JP7:clk, F2H_Mem_Window_00000000:clk, F2H_Mem_Window_FF600000:clk, F2H_Mem_Window_FF800000:clk, Interval_Timer:clk, Interval_Timer_2:clk, Interval_Timer_2nd_Core:clk, Interval_Timer_2nd_Core_2:clk, JTAG_UART:clk, JTAG_UART_2nd_Core:clk, JTAG_UART_for_ARM_0:clk, JTAG_UART_for_ARM_1:clk, JTAG_to_FPGA_Bridge:clk_clk, JTAG_to_HPS_Bridge:clk_clk, LEDs:clk, Nios2:clk, Nios2_2nd_Core:clk, Nios2_2nd_Core_SRAM:clk, Nios2_SRAM:clk, Onchip_SRAM:clk, Pushbuttons:clk, Slider_Switches:clk, SysID:clock, clock_divider_0:clk, irq_mapper_002:clk, irq_mapper_003:clk, mm_interconnect_0:System_PLL_sys_clk_clk, mm_interconnect_1:System_PLL_sys_clk_clk, rst_controller:clk, rst_controller_003:clk, rst_controller_004:clk, rst_controller_006:clk]
 	wire         nios2_custom_instruction_master_readra;                                            // Nios2:D_ci_readra -> Nios2_custom_instruction_master_translator:ci_slave_readra
 	wire   [4:0] nios2_custom_instruction_master_a;                                                 // Nios2:D_ci_a -> Nios2_custom_instruction_master_translator:ci_slave_a
 	wire   [4:0] nios2_custom_instruction_master_b;                                                 // Nios2:D_ci_b -> Nios2_custom_instruction_master_translator:ci_slave_b
@@ -462,12 +463,6 @@ module Computer_System (
 	wire         mm_interconnect_0_jtag_uart_for_arm_1_avalon_jtag_slave_read;                      // mm_interconnect_0:JTAG_UART_for_ARM_1_avalon_jtag_slave_read -> JTAG_UART_for_ARM_1:av_read_n
 	wire         mm_interconnect_0_jtag_uart_for_arm_1_avalon_jtag_slave_write;                     // mm_interconnect_0:JTAG_UART_for_ARM_1_avalon_jtag_slave_write -> JTAG_UART_for_ARM_1:av_write_n
 	wire  [31:0] mm_interconnect_0_jtag_uart_for_arm_1_avalon_jtag_slave_writedata;                 // mm_interconnect_0:JTAG_UART_for_ARM_1_avalon_jtag_slave_writedata -> JTAG_UART_for_ARM_1:av_writedata
-	wire         mm_interconnect_0_my_counter_0_avalon_slave_chipselect;                            // mm_interconnect_0:my_counter_0_avalon_slave_chipselect -> my_counter_0:avalon_slave_chipselect
-	wire  [31:0] mm_interconnect_0_my_counter_0_avalon_slave_readdata;                              // my_counter_0:avalon_slave_readdata -> mm_interconnect_0:my_counter_0_avalon_slave_readdata
-	wire   [0:0] mm_interconnect_0_my_counter_0_avalon_slave_address;                               // mm_interconnect_0:my_counter_0_avalon_slave_address -> my_counter_0:avalon_slave_address
-	wire         mm_interconnect_0_my_counter_0_avalon_slave_read;                                  // mm_interconnect_0:my_counter_0_avalon_slave_read -> my_counter_0:avalon_slave_read
-	wire         mm_interconnect_0_my_counter_0_avalon_slave_write;                                 // mm_interconnect_0:my_counter_0_avalon_slave_write -> my_counter_0:avalon_slave_write
-	wire  [31:0] mm_interconnect_0_my_counter_0_avalon_slave_writedata;                             // mm_interconnect_0:my_counter_0_avalon_slave_writedata -> my_counter_0:avalon_slave_writedata
 	wire         mm_interconnect_0_nios2_sram_s2_chipselect;                                        // mm_interconnect_0:Nios2_SRAM_s2_chipselect -> Nios2_SRAM:chipselect2
 	wire  [31:0] mm_interconnect_0_nios2_sram_s2_readdata;                                          // Nios2_SRAM:readdata2 -> mm_interconnect_0:Nios2_SRAM_s2_readdata
 	wire  [12:0] mm_interconnect_0_nios2_sram_s2_address;                                           // mm_interconnect_0:Nios2_SRAM_s2_address -> Nios2_SRAM:address2
@@ -578,17 +573,18 @@ module Computer_System (
 	wire         irq_mapper_receiver5_irq;                                                          // Interval_Timer:irq -> [irq_mapper:receiver5_irq, irq_mapper_002:receiver5_irq]
 	wire         irq_mapper_receiver6_irq;                                                          // Interval_Timer_2:irq -> [irq_mapper:receiver6_irq, irq_mapper_002:receiver6_irq]
 	wire         irq_mapper_receiver0_irq;                                                          // Pushbuttons:irq -> [irq_mapper:receiver0_irq, irq_mapper_002:receiver0_irq, irq_mapper_003:receiver0_irq]
-	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [ADC:reset, Arduino_GPIO:reset_n, Arduino_Reset_N:reset_n, Expansion_JP1:reset_n, Expansion_JP7:reset_n, F2H_Mem_Window_00000000:reset, F2H_Mem_Window_FF600000:reset, F2H_Mem_Window_FF800000:reset, Interval_Timer:reset_n, Interval_Timer_2:reset_n, Interval_Timer_2nd_Core:reset_n, Interval_Timer_2nd_Core_2:reset_n, JTAG_UART:rst_n, JTAG_UART_2nd_Core:rst_n, JTAG_UART_for_ARM_0:rst_n, JTAG_UART_for_ARM_1:rst_n, LEDs:reset_n, Nios2_2nd_Core_SRAM:reset, Nios2_SRAM:reset, Onchip_SRAM:reset, Pushbuttons:reset_n, Slider_Switches:reset_n, SysID:reset_n, mm_interconnect_0:ADC_reset_reset_bridge_in_reset_reset, mm_interconnect_0:JTAG_to_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:F2H_Mem_Window_00000000_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_to_HPS_Bridge_clk_reset_reset_bridge_in_reset_reset, my_counter_0:reset_reset_n, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [ADC:reset, Arduino_GPIO:reset_n, Arduino_Reset_N:reset_n, Expansion_JP1:reset_n, Expansion_JP7:reset_n, F2H_Mem_Window_00000000:reset, F2H_Mem_Window_FF600000:reset, F2H_Mem_Window_FF800000:reset, Interval_Timer:reset_n, Interval_Timer_2:reset_n, Interval_Timer_2nd_Core:reset_n, Interval_Timer_2nd_Core_2:reset_n, JTAG_UART:rst_n, JTAG_UART_2nd_Core:rst_n, JTAG_UART_for_ARM_0:rst_n, JTAG_UART_for_ARM_1:rst_n, LEDs:reset_n, Nios2_2nd_Core_SRAM:reset, Nios2_SRAM:reset, Onchip_SRAM:reset, Pushbuttons:reset_n, Slider_Switches:reset_n, SysID:reset_n, clock_divider_0:reset_reset_n, mm_interconnect_0:ADC_reset_reset_bridge_in_reset_reset, mm_interconnect_0:JTAG_to_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:F2H_Mem_Window_00000000_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_to_HPS_Bridge_clk_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                                                // rst_controller:reset_req -> [Nios2_2nd_Core_SRAM:reset_req, Nios2_SRAM:reset_req, Onchip_SRAM:reset_req, rst_translator:reset_req_in]
-	wire         arm_a9_hps_h2f_reset_reset;                                                        // ARM_A9_HPS:h2f_rst_n -> [rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in1, rst_controller_004:reset_in1, rst_controller_005:reset_in0]
-	wire         system_pll_reset_source_reset;                                                     // System_PLL:reset_source_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in1, rst_controller_002:reset_in1, rst_controller_003:reset_in2, rst_controller_004:reset_in2]
+	wire         arm_a9_hps_h2f_reset_reset;                                                        // ARM_A9_HPS:h2f_rst_n -> [rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in1, rst_controller_004:reset_in1, rst_controller_005:reset_in0, rst_controller_006:reset_in0]
+	wire         system_pll_reset_source_reset;                                                     // System_PLL:reset_source_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in1, rst_controller_002:reset_in1, rst_controller_003:reset_in2, rst_controller_004:reset_in2, rst_controller_005:reset_in1]
 	wire         rst_controller_001_reset_out_reset;                                                // rst_controller_001:reset_out -> JTAG_to_FPGA_Bridge:clk_reset_reset
 	wire         rst_controller_002_reset_out_reset;                                                // rst_controller_002:reset_out -> JTAG_to_HPS_Bridge:clk_reset_reset
 	wire         rst_controller_003_reset_out_reset;                                                // rst_controller_003:reset_out -> [Nios2:reset_n, irq_mapper_002:reset, mm_interconnect_0:Nios2_reset_reset_bridge_in_reset_reset]
 	wire         nios2_debug_reset_request_reset;                                                   // Nios2:debug_reset_request -> rst_controller_003:reset_in0
 	wire         rst_controller_004_reset_out_reset;                                                // rst_controller_004:reset_out -> [Nios2_2nd_Core:reset_n, irq_mapper_003:reset, mm_interconnect_0:Nios2_2nd_Core_reset_reset_bridge_in_reset_reset]
 	wire         nios2_2nd_core_debug_reset_request_reset;                                          // Nios2_2nd_Core:debug_reset_request -> rst_controller_004:reset_in0
-	wire         rst_controller_005_reset_out_reset;                                                // rst_controller_005:reset_out -> [mm_interconnect_0:ARM_A9_HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:ARM_A9_HPS_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset_reset]
+	wire         rst_controller_005_reset_out_reset;                                                // rst_controller_005:reset_out -> stepper_basic_0:reset_low
+	wire         rst_controller_006_reset_out_reset;                                                // rst_controller_006:reset_out -> [mm_interconnect_0:ARM_A9_HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:ARM_A9_HPS_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset_reset]
 
 	Computer_System_ADC #(
 		.board          ("DE10-Nano"),
@@ -1321,15 +1317,16 @@ module Computer_System (
 		.reset_source_reset (system_pll_reset_source_reset)  // reset_source.reset
 	);
 
-	my_counter my_counter_0 (
-		.avalon_slave_address    (mm_interconnect_0_my_counter_0_avalon_slave_address),    //  avalon_slave.address
-		.avalon_slave_chipselect (mm_interconnect_0_my_counter_0_avalon_slave_chipselect), //              .chipselect
-		.avalon_slave_read       (mm_interconnect_0_my_counter_0_avalon_slave_read),       //              .read
-		.avalon_slave_write      (mm_interconnect_0_my_counter_0_avalon_slave_write),      //              .write
-		.avalon_slave_readdata   (mm_interconnect_0_my_counter_0_avalon_slave_readdata),   //              .readdata
-		.avalon_slave_writedata  (mm_interconnect_0_my_counter_0_avalon_slave_writedata),  //              .writedata
-		.clock_clk               (system_pll_sys_clk_clk),                                 //     clock_clk.clk
-		.reset_reset_n           (~rst_controller_reset_out_reset)                         // reset_reset_n.reset_n
+	stepper_control clock_divider_0 (
+		.clk           (system_pll_sys_clk_clk),          //         clock.clk
+		.reset_reset_n (~rst_controller_reset_out_reset), // reset_reset_n.reset_n
+		.vv_clk        (clock_divider_0_clk_div_clk)      //       clk_div.clk
+	);
+
+	stepper_control stepper_basic_0 (
+		.clock_clk (clock_divider_0_clk_div_clk),         // clock_clk.clk
+		.reset_low (~rst_controller_005_reset_out_reset), // reset_low.reset_n
+		.state_out ()                                     // state_out.output
 	);
 
 	altera_customins_master_translator #(
@@ -1693,7 +1690,7 @@ module Computer_System (
 		.ARM_A9_HPS_h2f_lw_axi_master_rready                                      (arm_a9_hps_h2f_lw_axi_master_rready),                                    //                                                                   .rready
 		.System_PLL_sys_clk_clk                                                   (system_pll_sys_clk_clk),                                                 //                                                 System_PLL_sys_clk.clk
 		.ADC_reset_reset_bridge_in_reset_reset                                    (rst_controller_reset_out_reset),                                         //                                    ADC_reset_reset_bridge_in_reset.reset
-		.ARM_A9_HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset (rst_controller_005_reset_out_reset),                                     // ARM_A9_HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
+		.ARM_A9_HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset (rst_controller_006_reset_out_reset),                                     // ARM_A9_HPS_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		.JTAG_to_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset                (rst_controller_reset_out_reset),                                         //                JTAG_to_FPGA_Bridge_clk_reset_reset_bridge_in_reset.reset
 		.Nios2_2nd_Core_reset_reset_bridge_in_reset_reset                         (rst_controller_004_reset_out_reset),                                     //                         Nios2_2nd_Core_reset_reset_bridge_in_reset.reset
 		.Nios2_reset_reset_bridge_in_reset_reset                                  (rst_controller_003_reset_out_reset),                                     //                                  Nios2_reset_reset_bridge_in_reset.reset
@@ -1835,12 +1832,6 @@ module Computer_System (
 		.LEDs_s1_readdata                                                         (mm_interconnect_0_leds_s1_readdata),                                     //                                                                   .readdata
 		.LEDs_s1_writedata                                                        (mm_interconnect_0_leds_s1_writedata),                                    //                                                                   .writedata
 		.LEDs_s1_chipselect                                                       (mm_interconnect_0_leds_s1_chipselect),                                   //                                                                   .chipselect
-		.my_counter_0_avalon_slave_address                                        (mm_interconnect_0_my_counter_0_avalon_slave_address),                    //                                          my_counter_0_avalon_slave.address
-		.my_counter_0_avalon_slave_write                                          (mm_interconnect_0_my_counter_0_avalon_slave_write),                      //                                                                   .write
-		.my_counter_0_avalon_slave_read                                           (mm_interconnect_0_my_counter_0_avalon_slave_read),                       //                                                                   .read
-		.my_counter_0_avalon_slave_readdata                                       (mm_interconnect_0_my_counter_0_avalon_slave_readdata),                   //                                                                   .readdata
-		.my_counter_0_avalon_slave_writedata                                      (mm_interconnect_0_my_counter_0_avalon_slave_writedata),                  //                                                                   .writedata
-		.my_counter_0_avalon_slave_chipselect                                     (mm_interconnect_0_my_counter_0_avalon_slave_chipselect),                 //                                                                   .chipselect
 		.Nios2_debug_mem_slave_address                                            (mm_interconnect_0_nios2_debug_mem_slave_address),                        //                                              Nios2_debug_mem_slave.address
 		.Nios2_debug_mem_slave_write                                              (mm_interconnect_0_nios2_debug_mem_slave_write),                          //                                                                   .write
 		.Nios2_debug_mem_slave_read                                               (mm_interconnect_0_nios2_debug_mem_slave_read),                           //                                                                   .read
@@ -1950,7 +1941,7 @@ module Computer_System (
 		.ARM_A9_HPS_f2h_axi_slave_rvalid                                       (mm_interconnect_1_arm_a9_hps_f2h_axi_slave_rvalid),     //                                                                .rvalid
 		.ARM_A9_HPS_f2h_axi_slave_rready                                       (mm_interconnect_1_arm_a9_hps_f2h_axi_slave_rready),     //                                                                .rready
 		.System_PLL_sys_clk_clk                                                (system_pll_sys_clk_clk),                                //                                              System_PLL_sys_clk.clk
-		.ARM_A9_HPS_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset_reset (rst_controller_005_reset_out_reset),                    // ARM_A9_HPS_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset.reset
+		.ARM_A9_HPS_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset_reset (rst_controller_006_reset_out_reset),                    // ARM_A9_HPS_f2h_axi_slave_agent_reset_sink_reset_bridge_in_reset.reset
 		.F2H_Mem_Window_00000000_reset_reset_bridge_in_reset_reset             (rst_controller_reset_out_reset),                        //             F2H_Mem_Window_00000000_reset_reset_bridge_in_reset.reset
 		.JTAG_to_HPS_Bridge_clk_reset_reset_bridge_in_reset_reset              (rst_controller_reset_out_reset),                        //              JTAG_to_HPS_Bridge_clk_reset_reset_bridge_in_reset.reset
 		.F2H_Mem_Window_00000000_expanded_master_address                       (f2h_mem_window_00000000_expanded_master_address),       //                         F2H_Mem_Window_00000000_expanded_master.address
@@ -2352,7 +2343,7 @@ module Computer_System (
 	);
 
 	altera_reset_controller #(
-		.NUM_RESET_INPUTS          (1),
+		.NUM_RESET_INPUTS          (2),
 		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
 		.SYNC_DEPTH                (2),
 		.RESET_REQUEST_PRESENT     (0),
@@ -2378,8 +2369,71 @@ module Computer_System (
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller_005 (
 		.reset_in0      (~arm_a9_hps_h2f_reset_reset),        // reset_in0.reset
-		.clk            (system_pll_sys_clk_clk),             //       clk.clk
+		.reset_in1      (system_pll_reset_source_reset),      // reset_in1.reset
+		.clk            (clock_divider_0_clk_div_clk),        //       clk.clk
 		.reset_out      (rst_controller_005_reset_out_reset), // reset_out.reset
+		.reset_req      (),                                   // (terminated)
+		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_req_in1  (1'b0),                               // (terminated)
+		.reset_in2      (1'b0),                               // (terminated)
+		.reset_req_in2  (1'b0),                               // (terminated)
+		.reset_in3      (1'b0),                               // (terminated)
+		.reset_req_in3  (1'b0),                               // (terminated)
+		.reset_in4      (1'b0),                               // (terminated)
+		.reset_req_in4  (1'b0),                               // (terminated)
+		.reset_in5      (1'b0),                               // (terminated)
+		.reset_req_in5  (1'b0),                               // (terminated)
+		.reset_in6      (1'b0),                               // (terminated)
+		.reset_req_in6  (1'b0),                               // (terminated)
+		.reset_in7      (1'b0),                               // (terminated)
+		.reset_req_in7  (1'b0),                               // (terminated)
+		.reset_in8      (1'b0),                               // (terminated)
+		.reset_req_in8  (1'b0),                               // (terminated)
+		.reset_in9      (1'b0),                               // (terminated)
+		.reset_req_in9  (1'b0),                               // (terminated)
+		.reset_in10     (1'b0),                               // (terminated)
+		.reset_req_in10 (1'b0),                               // (terminated)
+		.reset_in11     (1'b0),                               // (terminated)
+		.reset_req_in11 (1'b0),                               // (terminated)
+		.reset_in12     (1'b0),                               // (terminated)
+		.reset_req_in12 (1'b0),                               // (terminated)
+		.reset_in13     (1'b0),                               // (terminated)
+		.reset_req_in13 (1'b0),                               // (terminated)
+		.reset_in14     (1'b0),                               // (terminated)
+		.reset_req_in14 (1'b0),                               // (terminated)
+		.reset_in15     (1'b0),                               // (terminated)
+		.reset_req_in15 (1'b0)                                // (terminated)
+	);
+
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (1),
+		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
+	) rst_controller_006 (
+		.reset_in0      (~arm_a9_hps_h2f_reset_reset),        // reset_in0.reset
+		.clk            (system_pll_sys_clk_clk),             //       clk.clk
+		.reset_out      (rst_controller_006_reset_out_reset), // reset_out.reset
 		.reset_req      (),                                   // (terminated)
 		.reset_req_in0  (1'b0),                               // (terminated)
 		.reset_in1      (1'b0),                               // (terminated)

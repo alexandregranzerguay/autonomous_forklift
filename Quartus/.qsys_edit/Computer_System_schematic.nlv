@@ -1,7 +1,7 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.p2b -pg 1
-preplace inst Computer_System.Nios2_2nd_Core -pg 1 -lvl 2 -y 1590
+preplace inst Computer_System.Nios2_2nd_Core -pg 1 -lvl 2 -y 1550
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.b2p_adapter -pg 1
 preplace inst Computer_System.ARM_A9_HPS.fpga_interfaces -pg 1
 preplace inst Computer_System.ARM_A9_HPS.arm_a9_0 -pg 1
@@ -12,18 +12,18 @@ preplace inst Computer_System.ARM_A9_HPS.arm_a9_1 -pg 1
 preplace inst Computer_System.SysID -pg 1 -lvl 5 -y 2130
 preplace inst Computer_System.JTAG_to_HPS_Bridge.fifo -pg 1
 preplace inst Computer_System.ARM_A9_HPS.clk_0 -pg 1
-preplace inst Computer_System.JTAG_UART_for_ARM_0 -pg 1 -lvl 5 -y 1210
+preplace inst Computer_System.JTAG_UART_for_ARM_0 -pg 1 -lvl 5 -y 1260
 preplace inst Computer_System.JTAG_UART_for_ARM_1 -pg 1 -lvl 5 -y 1730
-preplace inst Computer_System.Interval_Timer_2nd_Core -pg 1 -lvl 5 -y 910
+preplace inst Computer_System.Interval_Timer_2nd_Core -pg 1 -lvl 5 -y 960
 preplace inst Computer_System.ARM_A9_HPS.wd_timer0 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.hps_io -pg 1
 preplace inst Computer_System.ARM_A9_HPS.wd_timer1 -pg 1
-preplace inst Computer_System.Interval_Timer -pg 1 -lvl 5 -y 710
+preplace inst Computer_System.Interval_Timer -pg 1 -lvl 5 -y 760
 preplace inst Computer_System.Arduino_GPIO -pg 1 -lvl 5 -y 230
 preplace inst Computer_System.ARM_A9_HPS.f2s_periph_ref_clk -pg 1
-preplace inst Computer_System.Nios2_Floating_Point -pg 1 -lvl 5 -y 1510
-preplace inst Computer_System.Pushbuttons -pg 1 -lvl 5 -y 590
-preplace inst Computer_System.F2H_Mem_Window_FF800000 -pg 1 -lvl 3 -y 1940
+preplace inst Computer_System.Nios2_Floating_Point -pg 1 -lvl 5 -y 1560
+preplace inst Computer_System.Pushbuttons -pg 1 -lvl 5 -y 640
+preplace inst Computer_System.F2H_Mem_Window_FF800000 -pg 1 -lvl 3 -y 1990
 preplace inst Computer_System.ARM_A9_HPS.i2c0 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.qspi -pg 1
 preplace inst Computer_System.ARM_A9_HPS.i2c1 -pg 1
@@ -33,13 +33,13 @@ preplace inst Computer_System.JTAG_to_FPGA_Bridge.timing_adt -pg 1
 preplace inst Computer_System.ARM_A9_HPS.uart0 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.i2c3 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.uart1 -pg 1
-preplace inst Computer_System.Nios2_SRAM -pg 1 -lvl 5 -y 1410
+preplace inst Computer_System.Nios2_SRAM -pg 1 -lvl 5 -y 1460
 preplace inst Computer_System.JTAG_to_HPS_Bridge.b2p -pg 1
 preplace inst Computer_System.JTAG_to_HPS_Bridge.clk_rst -pg 1
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.fifo -pg 1
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.jtag_phy_embedded_in_jtag_master -pg 1
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.clk_src -pg 1
-preplace inst Computer_System.Interval_Timer_2 -pg 1 -lvl 5 -y 810
+preplace inst Computer_System.Interval_Timer_2 -pg 1 -lvl 5 -y 860
 preplace inst Computer_System.ARM_A9_HPS -pg 1 -lvl 4 -y 1730
 preplace inst Computer_System.JTAG_to_HPS_Bridge.p2b_adapter -pg 1
 preplace inst Computer_System.JTAG_to_HPS_Bridge.jtag_phy_embedded_in_jtag_master -pg 1
@@ -53,33 +53,33 @@ preplace inst Computer_System.ARM_A9_HPS.gpio0 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.eosc2 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.gpio1 -pg 1
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.p2b_adapter -pg 1
-preplace inst Computer_System.F2H_Mem_Window_FF600000 -pg 1 -lvl 3 -y 1780
+preplace inst Computer_System.F2H_Mem_Window_FF600000 -pg 1 -lvl 3 -y 1900
 preplace inst Computer_System.ARM_A9_HPS.gpio2 -pg 1
 preplace inst Computer_System.Onchip_SRAM -pg 1 -lvl 5 -y 1930
 preplace inst Computer_System.System_PLL -pg 1 -lvl 1 -y 1470
 preplace inst Computer_System.ARM_A9_HPS.usb0 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.axi_sdram -pg 1
 preplace inst Computer_System.ARM_A9_HPS.usb1 -pg 1
-preplace inst Computer_System.Expansion_JP1 -pg 1 -lvl 5 -y 350
+preplace inst Computer_System.Expansion_JP1 -pg 1 -lvl 5 -y 400
 preplace inst Computer_System.ARM_A9_HPS.dcan0 -pg 1
 preplace inst Computer_System.Slider_Switches -pg 1 -lvl 5 -y 2210
 preplace inst Computer_System.Nios2_2nd_Core.cpu -pg 1
 preplace inst Computer_System.Nios2.clock_bridge -pg 1
 preplace inst Computer_System.ARM_A9_HPS.dcan1 -pg 1
-preplace inst Computer_System.Nios2_2nd_Core_Floating_Point -pg 1 -lvl 5 -y 1550
+preplace inst Computer_System.Nios2_2nd_Core_Floating_Point -pg 1 -lvl 5 -y 1600
 preplace inst Computer_System.JTAG_to_HPS_Bridge.transacto -pg 1
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.transacto -pg 1
-preplace inst Computer_System.JTAG_UART_2nd_Core -pg 1 -lvl 5 -y 1310
+preplace inst Computer_System.JTAG_UART_2nd_Core -pg 1 -lvl 5 -y 1360
 preplace inst Computer_System.ARM_A9_HPS.nand0 -pg 1
 preplace inst Computer_System.Arduino_Reset_N -pg 1 -lvl 5 -y 130
-preplace inst Computer_System.JTAG_UART -pg 1 -lvl 5 -y 1110
+preplace inst Computer_System.JTAG_UART -pg 1 -lvl 5 -y 1160
 preplace inst Computer_System.ARM_A9_HPS.sdrctl -pg 1
 preplace inst Computer_System.ARM_A9_HPS.spim0 -pg 1
-preplace inst Computer_System.F2H_Mem_Window_00000000 -pg 1 -lvl 3 -y 1590
+preplace inst Computer_System.F2H_Mem_Window_00000000 -pg 1 -lvl 3 -y 1620
 preplace inst Computer_System.ARM_A9_HPS.rstmgr -pg 1
-preplace inst Computer_System.JTAG_to_HPS_Bridge -pg 1 -lvl 3 -y 1700
+preplace inst Computer_System.JTAG_to_HPS_Bridge -pg 1 -lvl 3 -y 1750
 preplace inst Computer_System.ARM_A9_HPS.spim1 -pg 1
-preplace inst Computer_System.Expansion_JP7 -pg 1 -lvl 5 -y 470
+preplace inst Computer_System.Expansion_JP7 -pg 1 -lvl 5 -y 520
 preplace inst Computer_System.ARM_A9_HPS.hps_io.border -pg 1
 preplace inst Computer_System.ARM_A9_HPS.l3regs -pg 1
 preplace inst Computer_System.ARM_A9_HPS.scu -pg 1
@@ -89,7 +89,7 @@ preplace inst Computer_System.JTAG_to_HPS_Bridge.p2b -pg 1
 preplace inst Computer_System.JTAG_to_FPGA_Bridge.b2p -pg 1
 preplace inst Computer_System.ARM_A9_HPS.timer -pg 1
 preplace inst Computer_System.ARM_A9_HPS.timer0 -pg 1
-preplace inst Computer_System.Nios2 -pg 1 -lvl 2 -y 1410
+preplace inst Computer_System.Nios2 -pg 1 -lvl 2 -y 1390
 preplace inst Computer_System.ARM_A9_HPS.f2s_sdram_ref_clk -pg 1
 preplace inst Computer_System.ARM_A9_HPS.arm_gic_0 -pg 1
 preplace inst Computer_System.ARM_A9_HPS.timer1 -pg 1
@@ -104,31 +104,31 @@ preplace inst Computer_System.Nios2_2nd_Core.reset_bridge -pg 1
 preplace inst Computer_System.Nios2_2nd_Core.clock_bridge -pg 1
 preplace inst Computer_System.Nios2.cpu -pg 1
 preplace inst Computer_System.ARM_A9_HPS.gmac1 -pg 1
-preplace inst Computer_System.Interval_Timer_2nd_Core_2 -pg 1 -lvl 5 -y 1010
+preplace inst Computer_System.Interval_Timer_2nd_Core_2 -pg 1 -lvl 5 -y 1060
 preplace inst Computer_System.ARM_A9_HPS.sysmgr -pg 1
 preplace inst Computer_System -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst Computer_System.LEDs -pg 1 -lvl 5 -y 1830
 preplace inst Computer_System.JTAG_to_FPGA_Bridge -pg 1 -lvl 2 -y 1770
 preplace inst Computer_System.ARM_A9_HPS.dma -pg 1
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.expansion_jp1,(SLAVE)Expansion_JP1.external_connection) 1 0 5 NJ 380 NJ 380 NJ 380 NJ 380 NJ
-preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(SLAVE)SysID.control_slave,(SLAVE)JTAG_UART_2nd_Core.avalon_jtag_slave,(MASTER)JTAG_to_FPGA_Bridge.master,(SLAVE)Interval_Timer.s1,(MASTER)ARM_A9_HPS.h2f_lw_axi_master,(SLAVE)F2H_Mem_Window_FF600000.windowed_slave,(SLAVE)Expansion_JP1.s1,(SLAVE)F2H_Mem_Window_FF800000.windowed_slave,(SLAVE)Pushbuttons.s1,(SLAVE)Interval_Timer_2nd_Core_2.s1,(SLAVE)Nios2_2nd_Core_SRAM.s1,(SLAVE)Arduino_Reset_N.s1,(SLAVE)Nios2_SRAM.s2,(SLAVE)ADC.adc_slave,(SLAVE)Nios2_SRAM.s1,(SLAVE)Expansion_JP7.s1,(MASTER)Nios2.instruction_master,(SLAVE)JTAG_UART_for_ARM_1.avalon_jtag_slave,(MASTER)Nios2.data_master,(SLAVE)Interval_Timer_2.s1,(MASTER)ARM_A9_HPS.h2f_axi_master,(SLAVE)Onchip_SRAM.s1,(SLAVE)Onchip_SRAM.s2,(MASTER)Nios2_2nd_Core.data_master,(SLAVE)Nios2_2nd_Core.debug_mem_slave,(SLAVE)LEDs.s1,(SLAVE)Slider_Switches.s1,(SLAVE)Interval_Timer_2nd_Core.s1,(SLAVE)F2H_Mem_Window_00000000.windowed_slave,(SLAVE)JTAG_UART.avalon_jtag_slave,(SLAVE)Nios2.debug_mem_slave,(SLAVE)Arduino_GPIO.s1,(SLAVE)JTAG_UART_for_ARM_0.avalon_jtag_slave,(SLAVE)Nios2_2nd_Core_SRAM.s2,(MASTER)Nios2_2nd_Core.instruction_master) 1 1 4 430 1550 790 1580 NJ 1580 1540
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)ADC.external_interface,(SLAVE)Computer_System.adc) 1 0 5 NJ 80 NJ 80 NJ 80 NJ 80 NJ
-preplace netloc POINT_TO_POINT<net_container>Computer_System</net_container>(SLAVE)Nios2_Floating_Point.s1,(MASTER)Nios2.custom_instruction_master) 1 2 3 NJ 1500 NJ 1500 NJ
-preplace netloc POINT_TO_POINT<net_container>Computer_System</net_container>(SLAVE)Nios2_2nd_Core_Floating_Point.s1,(MASTER)Nios2_2nd_Core.custom_instruction_master) 1 2 3 NJ 1560 NJ 1560 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.system_pll_ref_clk,(SLAVE)System_PLL.ref_clk) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(SLAVE)Interval_Timer_2nd_Core.irq,(MASTER)ARM_A9_HPS.f2h_irq0,(SLAVE)Expansion_JP7.irq,(SLAVE)JTAG_UART.irq,(SLAVE)JTAG_UART_for_ARM_0.irq,(SLAVE)Interval_Timer.irq,(SLAVE)Pushbuttons.irq,(SLAVE)Expansion_JP1.irq,(MASTER)Nios2_2nd_Core.irq,(MASTER)Nios2.irq,(SLAVE)Interval_Timer_2.irq,(SLAVE)JTAG_UART_2nd_Core.irq,(SLAVE)Arduino_GPIO.irq,(SLAVE)Interval_Timer_2nd_Core_2.irq) 1 2 3 790 1380 NJ 1380 1560
+preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(SLAVE)Nios2_2nd_Core.reset,(SLAVE)JTAG_UART_for_ARM_1.reset,(SLAVE)Nios2_2nd_Core_SRAM.reset1,(SLAVE)Nios2_SRAM.reset1,(SLAVE)ADC.reset,(SLAVE)Expansion_JP1.reset,(SLAVE)Interval_Timer_2.reset,(SLAVE)JTAG_to_HPS_Bridge.clk_reset,(SLAVE)JTAG_to_FPGA_Bridge.clk_reset,(SLAVE)Pushbuttons.reset,(SLAVE)Interval_Timer_2nd_Core_2.reset,(SLAVE)Onchip_SRAM.reset1,(SLAVE)Arduino_GPIO.reset,(SLAVE)Interval_Timer_2nd_Core.reset,(SLAVE)F2H_Mem_Window_FF800000.reset,(SLAVE)JTAG_UART_2nd_Core.reset,(SLAVE)JTAG_UART_for_ARM_0.reset,(SLAVE)Nios2.reset,(SLAVE)LEDs.reset,(MASTER)System_PLL.reset_source,(MASTER)ARM_A9_HPS.h2f_reset,(SLAVE)JTAG_UART.reset,(SLAVE)F2H_Mem_Window_00000000.reset,(SLAVE)Expansion_JP7.reset,(SLAVE)Arduino_Reset_N.reset,(MASTER)Nios2_2nd_Core.debug_reset_request,(MASTER)Nios2.debug_reset_request,(SLAVE)Interval_Timer.reset,(SLAVE)Slider_Switches.reset,(SLAVE)F2H_Mem_Window_FF600000.reset,(SLAVE)SysID.reset) 1 1 4 410 1710 830 2100 NJ 2100 1600
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Pushbuttons.external_connection,(SLAVE)Computer_System.pushbuttons) 1 0 5 NJ 670 NJ 670 NJ 670 NJ 670 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)System_PLL.ref_reset,(SLAVE)Computer_System.system_pll_ref_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.expansion_jp1,(SLAVE)Expansion_JP1.external_connection) 1 0 5 NJ 430 NJ 430 NJ 430 NJ 430 NJ
+preplace netloc POINT_TO_POINT<net_container>Computer_System</net_container>(SLAVE)Nios2_2nd_Core_Floating_Point.s1,(MASTER)Nios2_2nd_Core.custom_instruction_master) 1 2 3 NJ 1610 NJ 1610 NJ
+preplace netloc POINT_TO_POINT<net_container>Computer_System</net_container>(SLAVE)JTAG_UART_for_ARM_1.irq,(MASTER)ARM_A9_HPS.f2h_irq1) 1 4 1 N
 preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.arduino_reset_n,(SLAVE)Arduino_Reset_N.external_connection) 1 0 5 NJ 160 NJ 160 NJ 160 NJ 160 NJ
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.system_pll_ref_reset,(SLAVE)System_PLL.ref_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)ARM_A9_HPS.memory,(SLAVE)Computer_System.memory) 1 0 4 NJ 1890 NJ 1890 NJ 1890 NJ
-preplace netloc FAN_OUT<net_container>Computer_System</net_container>(SLAVE)ARM_A9_HPS.h2f_lw_axi_clock,(SLAVE)Slider_Switches.clk,(SLAVE)Pushbuttons.clk,(SLAVE)ARM_A9_HPS.f2h_axi_clock,(SLAVE)Nios2_2nd_Core_SRAM.clk1,(SLAVE)F2H_Mem_Window_FF800000.clock,(SLAVE)ARM_A9_HPS.h2f_axi_clock,(SLAVE)Interval_Timer_2nd_Core.clk,(SLAVE)Arduino_GPIO.clk,(SLAVE)F2H_Mem_Window_00000000.clock,(SLAVE)Expansion_JP1.clk,(SLAVE)SysID.clk,(SLAVE)Interval_Timer_2nd_Core_2.clk,(SLAVE)Interval_Timer_2.clk,(SLAVE)JTAG_UART_for_ARM_1.clk,(SLAVE)JTAG_to_HPS_Bridge.clk,(SLAVE)Onchip_SRAM.clk1,(MASTER)System_PLL.sys_clk,(SLAVE)Nios2_SRAM.clk1,(SLAVE)JTAG_UART.clk,(SLAVE)LEDs.clk,(SLAVE)Arduino_Reset_N.clk,(SLAVE)JTAG_UART_for_ARM_0.clk,(SLAVE)ADC.clk,(SLAVE)Nios2_2nd_Core.clk,(SLAVE)Nios2.clk,(SLAVE)JTAG_UART_2nd_Core.clk,(SLAVE)JTAG_to_FPGA_Bridge.clk,(SLAVE)F2H_Mem_Window_FF600000.clock,(SLAVE)Expansion_JP7.clk,(SLAVE)Interval_Timer.clk) 1 1 4 410 1730 850 1930 1180 1930 1620
-preplace netloc FAN_IN<net_container>Computer_System</net_container>(MASTER)F2H_Mem_Window_FF800000.expanded_master,(MASTER)JTAG_to_HPS_Bridge.master,(MASTER)F2H_Mem_Window_FF600000.expanded_master,(SLAVE)ARM_A9_HPS.f2h_axi_slave,(MASTER)F2H_Mem_Window_00000000.expanded_master) 1 3 1 1140
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)LEDs.external_connection,(SLAVE)Computer_System.leds) 1 0 5 NJ 1910 NJ 1910 NJ 1910 NJ 1910 NJ
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Expansion_JP7.external_connection,(SLAVE)Computer_System.expansion_jp7) 1 0 5 NJ 500 NJ 500 NJ 500 NJ 500 NJ
-preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(MASTER)ARM_A9_HPS.h2f_reset,(SLAVE)Nios2_SRAM.reset1,(SLAVE)JTAG_UART.reset,(SLAVE)Arduino_Reset_N.reset,(SLAVE)Slider_Switches.reset,(SLAVE)Interval_Timer_2nd_Core.reset,(SLAVE)JTAG_to_HPS_Bridge.clk_reset,(SLAVE)F2H_Mem_Window_FF600000.reset,(SLAVE)F2H_Mem_Window_FF800000.reset,(SLAVE)Expansion_JP1.reset,(SLAVE)ADC.reset,(SLAVE)Nios2_2nd_Core.reset,(SLAVE)Arduino_GPIO.reset,(SLAVE)SysID.reset,(MASTER)System_PLL.reset_source,(SLAVE)JTAG_to_FPGA_Bridge.clk_reset,(SLAVE)Interval_Timer.reset,(SLAVE)LEDs.reset,(SLAVE)Expansion_JP7.reset,(SLAVE)Nios2_2nd_Core_SRAM.reset1,(SLAVE)Pushbuttons.reset,(SLAVE)F2H_Mem_Window_00000000.reset,(SLAVE)Onchip_SRAM.reset1,(MASTER)Nios2.debug_reset_request,(SLAVE)Nios2.reset,(SLAVE)Interval_Timer_2.reset,(SLAVE)Interval_Timer_2nd_Core_2.reset,(SLAVE)JTAG_UART_for_ARM_0.reset,(MASTER)Nios2_2nd_Core.debug_reset_request,(SLAVE)JTAG_UART_for_ARM_1.reset,(SLAVE)JTAG_UART_2nd_Core.reset) 1 1 4 390 1850 870 1520 NJ 1520 1580
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.hps_io,(SLAVE)ARM_A9_HPS.hps_io) 1 0 4 NJ 1870 NJ 1870 NJ 1870 NJ
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.pushbuttons,(SLAVE)Pushbuttons.external_connection) 1 0 5 NJ 620 NJ 620 NJ 620 NJ 620 NJ
-preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(SLAVE)Interval_Timer.irq,(SLAVE)Expansion_JP7.irq,(SLAVE)JTAG_UART_for_ARM_0.irq,(SLAVE)Pushbuttons.irq,(SLAVE)Expansion_JP1.irq,(MASTER)Nios2_2nd_Core.irq,(SLAVE)Interval_Timer_2.irq,(SLAVE)JTAG_UART.irq,(SLAVE)JTAG_UART_2nd_Core.irq,(MASTER)ARM_A9_HPS.f2h_irq0,(MASTER)Nios2.irq,(SLAVE)Interval_Timer_2nd_Core.irq,(SLAVE)Arduino_GPIO.irq,(SLAVE)Interval_Timer_2nd_Core_2.irq) 1 2 3 830 1540 NJ 1540 1560
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.memory,(SLAVE)ARM_A9_HPS.memory) 1 0 4 NJ 1890 NJ 1890 NJ 1870 NJ
+preplace netloc FAN_IN<net_container>Computer_System</net_container>(MASTER)F2H_Mem_Window_FF800000.expanded_master,(MASTER)JTAG_to_HPS_Bridge.master,(MASTER)F2H_Mem_Window_00000000.expanded_master,(MASTER)F2H_Mem_Window_FF600000.expanded_master,(SLAVE)ARM_A9_HPS.f2h_axi_slave) 1 3 1 1180
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)LEDs.external_connection,(SLAVE)Computer_System.leds) 1 0 5 NJ 1870 NJ 1870 NJ 1850 NJ 1910 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Expansion_JP7.external_connection,(SLAVE)Computer_System.expansion_jp7) 1 0 5 NJ 550 NJ 550 NJ 550 NJ 550 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.adc,(SLAVE)ADC.external_interface) 1 0 5 NJ 80 NJ 80 NJ 80 NJ 80 NJ
+preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.hps_io,(SLAVE)ARM_A9_HPS.hps_io) 1 0 4 NJ 1850 NJ 1850 NJ 1830 NJ
 preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Computer_System.slider_switches,(SLAVE)Slider_Switches.external_connection) 1 0 5 NJ 2240 NJ 2240 NJ 2240 NJ 2240 NJ
-preplace netloc POINT_TO_POINT<net_container>Computer_System</net_container>(MASTER)ARM_A9_HPS.f2h_irq1,(SLAVE)JTAG_UART_for_ARM_1.irq) 1 4 1 N
-preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)System_PLL.ref_clk,(SLAVE)Computer_System.system_pll_ref_clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>Computer_System</net_container>(MASTER)Nios2.custom_instruction_master,(SLAVE)Nios2_Floating_Point.s1) 1 2 3 NJ 1400 NJ 1400 1540
+preplace netloc FAN_OUT<net_container>Computer_System</net_container>(SLAVE)Expansion_JP7.clk,(SLAVE)Arduino_Reset_N.clk,(SLAVE)Nios2_2nd_Core.clk,(SLAVE)Expansion_JP1.clk,(SLAVE)Interval_Timer.clk,(SLAVE)ARM_A9_HPS.h2f_lw_axi_clock,(SLAVE)Pushbuttons.clk,(SLAVE)JTAG_UART.clk,(SLAVE)JTAG_UART_for_ARM_1.clk,(SLAVE)ADC.clk,(SLAVE)LEDs.clk,(SLAVE)Interval_Timer_2nd_Core.clk,(SLAVE)F2H_Mem_Window_00000000.clock,(SLAVE)JTAG_to_FPGA_Bridge.clk,(SLAVE)F2H_Mem_Window_FF800000.clock,(SLAVE)ARM_A9_HPS.f2h_axi_clock,(SLAVE)Arduino_GPIO.clk,(SLAVE)JTAG_to_HPS_Bridge.clk,(SLAVE)SysID.clk,(SLAVE)ARM_A9_HPS.h2f_axi_clock,(SLAVE)Nios2_SRAM.clk1,(SLAVE)JTAG_UART_for_ARM_0.clk,(SLAVE)Nios2.clk,(MASTER)System_PLL.sys_clk,(SLAVE)JTAG_UART_2nd_Core.clk,(SLAVE)Slider_Switches.clk,(SLAVE)F2H_Mem_Window_FF600000.clock,(SLAVE)Nios2_2nd_Core_SRAM.clk1,(SLAVE)Interval_Timer_2nd_Core_2.clk,(SLAVE)Onchip_SRAM.clk1,(SLAVE)Interval_Timer_2.clk) 1 1 4 390 1690 890 1710 1220 1690 1620
 preplace netloc EXPORT<net_container>Computer_System</net_container>(SLAVE)Arduino_GPIO.external_connection,(SLAVE)Computer_System.arduino_gpio) 1 0 5 NJ 260 NJ 260 NJ 260 NJ 260 NJ
+preplace netloc INTERCONNECT<net_container>Computer_System</net_container>(SLAVE)ADC.adc_slave,(SLAVE)Expansion_JP7.s1,(MASTER)ARM_A9_HPS.h2f_axi_master,(MASTER)Nios2_2nd_Core.instruction_master,(SLAVE)JTAG_UART.avalon_jtag_slave,(SLAVE)Nios2.debug_mem_slave,(SLAVE)Arduino_GPIO.s1,(SLAVE)Arduino_Reset_N.s1,(SLAVE)F2H_Mem_Window_00000000.windowed_slave,(SLAVE)JTAG_UART_for_ARM_0.avalon_jtag_slave,(MASTER)ARM_A9_HPS.h2f_lw_axi_master,(SLAVE)Onchip_SRAM.s2,(SLAVE)JTAG_UART_2nd_Core.avalon_jtag_slave,(SLAVE)F2H_Mem_Window_FF600000.windowed_slave,(SLAVE)Nios2_SRAM.s2,(MASTER)Nios2.data_master,(SLAVE)Pushbuttons.s1,(MASTER)Nios2_2nd_Core.data_master,(SLAVE)Interval_Timer_2nd_Core.s1,(MASTER)JTAG_to_FPGA_Bridge.master,(SLAVE)Interval_Timer.s1,(SLAVE)Nios2_2nd_Core.debug_mem_slave,(SLAVE)JTAG_UART_for_ARM_1.avalon_jtag_slave,(SLAVE)Expansion_JP1.s1,(SLAVE)Nios2_SRAM.s1,(SLAVE)Interval_Timer_2nd_Core_2.s1,(SLAVE)SysID.control_slave,(SLAVE)Nios2_2nd_Core_SRAM.s2,(SLAVE)Nios2_2nd_Core_SRAM.s1,(SLAVE)Slider_Switches.s1,(SLAVE)Interval_Timer_2.s1,(SLAVE)F2H_Mem_Window_FF800000.windowed_slave,(SLAVE)Onchip_SRAM.s1,(MASTER)Nios2.instruction_master,(SLAVE)LEDs.s1) 1 1 4 430 1730 810 2080 NJ 2080 1580
 levelinfo -pg 1 0 140 1850
-levelinfo -hier Computer_System 150 230 550 970 1330 1690 1840
+levelinfo -hier Computer_System 150 230 550 990 1350 1690 1840

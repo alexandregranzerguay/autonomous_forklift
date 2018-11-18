@@ -577,6 +577,14 @@
          type = "int";
       }
    }
+   element clock_divider_0
+   {
+      datum _sortIndex
+      {
+         value = "37";
+         type = "int";
+      }
+   }
    element my_counter_0
    {
       datum _sortIndex
@@ -591,6 +599,14 @@
       {
          value = "16";
          type = "String";
+      }
+   }
+   element stepper_basic_0
+   {
+      datum _sortIndex
+      {
+         value = "38";
+         type = "int";
       }
    }
 }
@@ -2098,7 +2114,9 @@
   <parameter name="vga_clk_en" value="true" />
   <parameter name="video_in_clk_en" value="false" />
  </module>
- <module name="my_counter_0" kind="my_counter" version="1.0" enabled="1" />
+ <module name="clock_divider_0" kind="clock_divider" version="1.0" enabled="1" />
+ <module name="my_counter_0" kind="my_counter" version="1.0" enabled="0" />
+ <module name="stepper_basic_0" kind="stepper_basic" version="1.0" enabled="1" />
  <connection
    kind="avalon"
    version="17.1"
@@ -3052,6 +3070,11 @@
  <connection
    kind="clock"
    version="17.1"
+   start="clock_divider_0.clk_div"
+   end="stepper_basic_0.clock_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
    start="System_PLL.sys_clk"
    end="Nios2.clk" />
  <connection
@@ -3186,6 +3209,11 @@
    version="17.1"
    start="System_PLL.sys_clk"
    end="F2H_Mem_Window_FF800000.clock" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="System_PLL.sys_clk"
+   end="clock_divider_0.clock" />
  <connection
    kind="clock"
    version="17.1"
@@ -3569,7 +3597,17 @@
    kind="reset"
    version="17.1"
    start="ARM_A9_HPS.h2f_reset"
+   end="stepper_basic_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_reset"
    end="my_counter_0.reset_reset_n" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_reset"
+   end="clock_divider_0.reset_reset_n" />
  <connection
    kind="reset"
    version="17.1"
@@ -3729,7 +3767,17 @@
    kind="reset"
    version="17.1"
    start="System_PLL.reset_source"
+   end="stepper_basic_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="System_PLL.reset_source"
    end="my_counter_0.reset_reset_n" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="System_PLL.reset_source"
+   end="clock_divider_0.reset_reset_n" />
  <connection
    kind="reset"
    version="17.1"
