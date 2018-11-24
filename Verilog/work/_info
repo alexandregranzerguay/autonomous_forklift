@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.1
+vclock_divider
+Z0 !s110 1543079401
+!i10b 1
+!s100 zGY2b42066OoU03GDeS9j2
+I<]O`5MXkf[j:TOC>4nhzH1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog
+w1543079395
+8C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Clock_Divider.v
+FC:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Clock_Divider.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1543079401.000000
+!s107 C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Clock_Divider.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Clock_Divider.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vstepper_control
+R0
+!i10b 1
+!s100 8^XMFCITDn_K9_^6ebUQZ2
+Ij5jjn6WK2]WU^FAfW73M70
+R1
+R2
+w1543079285
+8C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic.v
+FC:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic.v|
+!i113 1
+R5
+R6
+vstepper_control_divided
+!s110 1543079402
+!i10b 1
+!s100 e^2;i_CQWnCG[<``am5j43
+IcP]cWnW@n9bcZi>C2lzeg1
+R1
+R2
+w1543078961
+8C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v
+FC:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v|
+!i113 1
+R5
+R6
+vtest_bench
+R0
+!i10b 1
+!s100 H4`kcETH5M>>gV3ecj<I12
+IzgO88T^57G7VR]S]dn]H23
+R1
+R2
+w1543014282
+8C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v
+FC:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ryanw/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v|
+!i113 1
+R5
+R6

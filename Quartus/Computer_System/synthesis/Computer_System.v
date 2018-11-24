@@ -4,87 +4,89 @@
 
 `timescale 1 ps / 1 ps
 module Computer_System (
-		output wire        adc_sclk,                        //                  adc.sclk
-		output wire        adc_cs_n,                        //                     .cs_n
-		input  wire        adc_dout,                        //                     .dout
-		output wire        adc_din,                         //                     .din
-		inout  wire [15:0] arduino_gpio_export,             //         arduino_gpio.export
-		output wire        arduino_reset_n_export,          //      arduino_reset_n.export
-		inout  wire [31:0] expansion_jp1_export,            //        expansion_jp1.export
-		inout  wire [31:0] expansion_jp7_export,            //        expansion_jp7.export
-		output wire        hps_io_hps_io_emac1_inst_TX_CLK, //               hps_io.hps_io_emac1_inst_TX_CLK
-		output wire        hps_io_hps_io_emac1_inst_TXD0,   //                     .hps_io_emac1_inst_TXD0
-		output wire        hps_io_hps_io_emac1_inst_TXD1,   //                     .hps_io_emac1_inst_TXD1
-		output wire        hps_io_hps_io_emac1_inst_TXD2,   //                     .hps_io_emac1_inst_TXD2
-		output wire        hps_io_hps_io_emac1_inst_TXD3,   //                     .hps_io_emac1_inst_TXD3
-		input  wire        hps_io_hps_io_emac1_inst_RXD0,   //                     .hps_io_emac1_inst_RXD0
-		inout  wire        hps_io_hps_io_emac1_inst_MDIO,   //                     .hps_io_emac1_inst_MDIO
-		output wire        hps_io_hps_io_emac1_inst_MDC,    //                     .hps_io_emac1_inst_MDC
-		input  wire        hps_io_hps_io_emac1_inst_RX_CTL, //                     .hps_io_emac1_inst_RX_CTL
-		output wire        hps_io_hps_io_emac1_inst_TX_CTL, //                     .hps_io_emac1_inst_TX_CTL
-		input  wire        hps_io_hps_io_emac1_inst_RX_CLK, //                     .hps_io_emac1_inst_RX_CLK
-		input  wire        hps_io_hps_io_emac1_inst_RXD1,   //                     .hps_io_emac1_inst_RXD1
-		input  wire        hps_io_hps_io_emac1_inst_RXD2,   //                     .hps_io_emac1_inst_RXD2
-		input  wire        hps_io_hps_io_emac1_inst_RXD3,   //                     .hps_io_emac1_inst_RXD3
-		inout  wire        hps_io_hps_io_sdio_inst_CMD,     //                     .hps_io_sdio_inst_CMD
-		inout  wire        hps_io_hps_io_sdio_inst_D0,      //                     .hps_io_sdio_inst_D0
-		inout  wire        hps_io_hps_io_sdio_inst_D1,      //                     .hps_io_sdio_inst_D1
-		output wire        hps_io_hps_io_sdio_inst_CLK,     //                     .hps_io_sdio_inst_CLK
-		inout  wire        hps_io_hps_io_sdio_inst_D2,      //                     .hps_io_sdio_inst_D2
-		inout  wire        hps_io_hps_io_sdio_inst_D3,      //                     .hps_io_sdio_inst_D3
-		inout  wire        hps_io_hps_io_usb1_inst_D0,      //                     .hps_io_usb1_inst_D0
-		inout  wire        hps_io_hps_io_usb1_inst_D1,      //                     .hps_io_usb1_inst_D1
-		inout  wire        hps_io_hps_io_usb1_inst_D2,      //                     .hps_io_usb1_inst_D2
-		inout  wire        hps_io_hps_io_usb1_inst_D3,      //                     .hps_io_usb1_inst_D3
-		inout  wire        hps_io_hps_io_usb1_inst_D4,      //                     .hps_io_usb1_inst_D4
-		inout  wire        hps_io_hps_io_usb1_inst_D5,      //                     .hps_io_usb1_inst_D5
-		inout  wire        hps_io_hps_io_usb1_inst_D6,      //                     .hps_io_usb1_inst_D6
-		inout  wire        hps_io_hps_io_usb1_inst_D7,      //                     .hps_io_usb1_inst_D7
-		input  wire        hps_io_hps_io_usb1_inst_CLK,     //                     .hps_io_usb1_inst_CLK
-		output wire        hps_io_hps_io_usb1_inst_STP,     //                     .hps_io_usb1_inst_STP
-		input  wire        hps_io_hps_io_usb1_inst_DIR,     //                     .hps_io_usb1_inst_DIR
-		input  wire        hps_io_hps_io_usb1_inst_NXT,     //                     .hps_io_usb1_inst_NXT
-		output wire        hps_io_hps_io_spim1_inst_CLK,    //                     .hps_io_spim1_inst_CLK
-		output wire        hps_io_hps_io_spim1_inst_MOSI,   //                     .hps_io_spim1_inst_MOSI
-		input  wire        hps_io_hps_io_spim1_inst_MISO,   //                     .hps_io_spim1_inst_MISO
-		output wire        hps_io_hps_io_spim1_inst_SS0,    //                     .hps_io_spim1_inst_SS0
-		input  wire        hps_io_hps_io_uart0_inst_RX,     //                     .hps_io_uart0_inst_RX
-		output wire        hps_io_hps_io_uart0_inst_TX,     //                     .hps_io_uart0_inst_TX
-		inout  wire        hps_io_hps_io_i2c0_inst_SDA,     //                     .hps_io_i2c0_inst_SDA
-		inout  wire        hps_io_hps_io_i2c0_inst_SCL,     //                     .hps_io_i2c0_inst_SCL
-		inout  wire        hps_io_hps_io_i2c1_inst_SDA,     //                     .hps_io_i2c1_inst_SDA
-		inout  wire        hps_io_hps_io_i2c1_inst_SCL,     //                     .hps_io_i2c1_inst_SCL
-		inout  wire        hps_io_hps_io_gpio_inst_GPIO09,  //                     .hps_io_gpio_inst_GPIO09
-		inout  wire        hps_io_hps_io_gpio_inst_GPIO35,  //                     .hps_io_gpio_inst_GPIO35
-		inout  wire        hps_io_hps_io_gpio_inst_GPIO40,  //                     .hps_io_gpio_inst_GPIO40
-		inout  wire        hps_io_hps_io_gpio_inst_GPIO53,  //                     .hps_io_gpio_inst_GPIO53
-		inout  wire        hps_io_hps_io_gpio_inst_GPIO54,  //                     .hps_io_gpio_inst_GPIO54
-		inout  wire        hps_io_hps_io_gpio_inst_GPIO61,  //                     .hps_io_gpio_inst_GPIO61
-		output wire [7:0]  leds_export,                     //                 leds.export
-		output wire [14:0] memory_mem_a,                    //               memory.mem_a
-		output wire [2:0]  memory_mem_ba,                   //                     .mem_ba
-		output wire        memory_mem_ck,                   //                     .mem_ck
-		output wire        memory_mem_ck_n,                 //                     .mem_ck_n
-		output wire        memory_mem_cke,                  //                     .mem_cke
-		output wire        memory_mem_cs_n,                 //                     .mem_cs_n
-		output wire        memory_mem_ras_n,                //                     .mem_ras_n
-		output wire        memory_mem_cas_n,                //                     .mem_cas_n
-		output wire        memory_mem_we_n,                 //                     .mem_we_n
-		output wire        memory_mem_reset_n,              //                     .mem_reset_n
-		inout  wire [31:0] memory_mem_dq,                   //                     .mem_dq
-		inout  wire [3:0]  memory_mem_dqs,                  //                     .mem_dqs
-		inout  wire [3:0]  memory_mem_dqs_n,                //                     .mem_dqs_n
-		output wire        memory_mem_odt,                  //                     .mem_odt
-		output wire [3:0]  memory_mem_dm,                   //                     .mem_dm
-		input  wire        memory_oct_rzqin,                //                     .oct_rzqin
-		input  wire [1:0]  pushbuttons_export,              //          pushbuttons.export
-		input  wire [3:0]  slider_switches_export,          //      slider_switches.export
-		input  wire        system_pll_ref_clk_clk,          //   system_pll_ref_clk.clk
-		input  wire        system_pll_ref_reset_reset       // system_pll_ref_reset.reset
+		output wire        adc_sclk,                                    //                               adc.sclk
+		output wire        adc_cs_n,                                    //                                  .cs_n
+		input  wire        adc_dout,                                    //                                  .dout
+		output wire        adc_din,                                     //                                  .din
+		inout  wire [15:0] arduino_gpio_export,                         //                      arduino_gpio.export
+		output wire        arduino_reset_n_export,                      //                   arduino_reset_n.export
+		inout  wire [31:0] expansion_jp1_export,                        //                     expansion_jp1.export
+		inout  wire [31:0] expansion_jp7_export,                        //                     expansion_jp7.export
+		output wire        hps_io_hps_io_emac1_inst_TX_CLK,             //                            hps_io.hps_io_emac1_inst_TX_CLK
+		output wire        hps_io_hps_io_emac1_inst_TXD0,               //                                  .hps_io_emac1_inst_TXD0
+		output wire        hps_io_hps_io_emac1_inst_TXD1,               //                                  .hps_io_emac1_inst_TXD1
+		output wire        hps_io_hps_io_emac1_inst_TXD2,               //                                  .hps_io_emac1_inst_TXD2
+		output wire        hps_io_hps_io_emac1_inst_TXD3,               //                                  .hps_io_emac1_inst_TXD3
+		input  wire        hps_io_hps_io_emac1_inst_RXD0,               //                                  .hps_io_emac1_inst_RXD0
+		inout  wire        hps_io_hps_io_emac1_inst_MDIO,               //                                  .hps_io_emac1_inst_MDIO
+		output wire        hps_io_hps_io_emac1_inst_MDC,                //                                  .hps_io_emac1_inst_MDC
+		input  wire        hps_io_hps_io_emac1_inst_RX_CTL,             //                                  .hps_io_emac1_inst_RX_CTL
+		output wire        hps_io_hps_io_emac1_inst_TX_CTL,             //                                  .hps_io_emac1_inst_TX_CTL
+		input  wire        hps_io_hps_io_emac1_inst_RX_CLK,             //                                  .hps_io_emac1_inst_RX_CLK
+		input  wire        hps_io_hps_io_emac1_inst_RXD1,               //                                  .hps_io_emac1_inst_RXD1
+		input  wire        hps_io_hps_io_emac1_inst_RXD2,               //                                  .hps_io_emac1_inst_RXD2
+		input  wire        hps_io_hps_io_emac1_inst_RXD3,               //                                  .hps_io_emac1_inst_RXD3
+		inout  wire        hps_io_hps_io_sdio_inst_CMD,                 //                                  .hps_io_sdio_inst_CMD
+		inout  wire        hps_io_hps_io_sdio_inst_D0,                  //                                  .hps_io_sdio_inst_D0
+		inout  wire        hps_io_hps_io_sdio_inst_D1,                  //                                  .hps_io_sdio_inst_D1
+		output wire        hps_io_hps_io_sdio_inst_CLK,                 //                                  .hps_io_sdio_inst_CLK
+		inout  wire        hps_io_hps_io_sdio_inst_D2,                  //                                  .hps_io_sdio_inst_D2
+		inout  wire        hps_io_hps_io_sdio_inst_D3,                  //                                  .hps_io_sdio_inst_D3
+		inout  wire        hps_io_hps_io_usb1_inst_D0,                  //                                  .hps_io_usb1_inst_D0
+		inout  wire        hps_io_hps_io_usb1_inst_D1,                  //                                  .hps_io_usb1_inst_D1
+		inout  wire        hps_io_hps_io_usb1_inst_D2,                  //                                  .hps_io_usb1_inst_D2
+		inout  wire        hps_io_hps_io_usb1_inst_D3,                  //                                  .hps_io_usb1_inst_D3
+		inout  wire        hps_io_hps_io_usb1_inst_D4,                  //                                  .hps_io_usb1_inst_D4
+		inout  wire        hps_io_hps_io_usb1_inst_D5,                  //                                  .hps_io_usb1_inst_D5
+		inout  wire        hps_io_hps_io_usb1_inst_D6,                  //                                  .hps_io_usb1_inst_D6
+		inout  wire        hps_io_hps_io_usb1_inst_D7,                  //                                  .hps_io_usb1_inst_D7
+		input  wire        hps_io_hps_io_usb1_inst_CLK,                 //                                  .hps_io_usb1_inst_CLK
+		output wire        hps_io_hps_io_usb1_inst_STP,                 //                                  .hps_io_usb1_inst_STP
+		input  wire        hps_io_hps_io_usb1_inst_DIR,                 //                                  .hps_io_usb1_inst_DIR
+		input  wire        hps_io_hps_io_usb1_inst_NXT,                 //                                  .hps_io_usb1_inst_NXT
+		output wire        hps_io_hps_io_spim1_inst_CLK,                //                                  .hps_io_spim1_inst_CLK
+		output wire        hps_io_hps_io_spim1_inst_MOSI,               //                                  .hps_io_spim1_inst_MOSI
+		input  wire        hps_io_hps_io_spim1_inst_MISO,               //                                  .hps_io_spim1_inst_MISO
+		output wire        hps_io_hps_io_spim1_inst_SS0,                //                                  .hps_io_spim1_inst_SS0
+		input  wire        hps_io_hps_io_uart0_inst_RX,                 //                                  .hps_io_uart0_inst_RX
+		output wire        hps_io_hps_io_uart0_inst_TX,                 //                                  .hps_io_uart0_inst_TX
+		inout  wire        hps_io_hps_io_i2c0_inst_SDA,                 //                                  .hps_io_i2c0_inst_SDA
+		inout  wire        hps_io_hps_io_i2c0_inst_SCL,                 //                                  .hps_io_i2c0_inst_SCL
+		inout  wire        hps_io_hps_io_i2c1_inst_SDA,                 //                                  .hps_io_i2c1_inst_SDA
+		inout  wire        hps_io_hps_io_i2c1_inst_SCL,                 //                                  .hps_io_i2c1_inst_SCL
+		inout  wire        hps_io_hps_io_gpio_inst_GPIO09,              //                                  .hps_io_gpio_inst_GPIO09
+		inout  wire        hps_io_hps_io_gpio_inst_GPIO35,              //                                  .hps_io_gpio_inst_GPIO35
+		inout  wire        hps_io_hps_io_gpio_inst_GPIO40,              //                                  .hps_io_gpio_inst_GPIO40
+		inout  wire        hps_io_hps_io_gpio_inst_GPIO53,              //                                  .hps_io_gpio_inst_GPIO53
+		inout  wire        hps_io_hps_io_gpio_inst_GPIO54,              //                                  .hps_io_gpio_inst_GPIO54
+		inout  wire        hps_io_hps_io_gpio_inst_GPIO61,              //                                  .hps_io_gpio_inst_GPIO61
+		output wire [7:0]  leds_export,                                 //                              leds.export
+		output wire [14:0] memory_mem_a,                                //                            memory.mem_a
+		output wire [2:0]  memory_mem_ba,                               //                                  .mem_ba
+		output wire        memory_mem_ck,                               //                                  .mem_ck
+		output wire        memory_mem_ck_n,                             //                                  .mem_ck_n
+		output wire        memory_mem_cke,                              //                                  .mem_cke
+		output wire        memory_mem_cs_n,                             //                                  .mem_cs_n
+		output wire        memory_mem_ras_n,                            //                                  .mem_ras_n
+		output wire        memory_mem_cas_n,                            //                                  .mem_cas_n
+		output wire        memory_mem_we_n,                             //                                  .mem_we_n
+		output wire        memory_mem_reset_n,                          //                                  .mem_reset_n
+		inout  wire [31:0] memory_mem_dq,                               //                                  .mem_dq
+		inout  wire [3:0]  memory_mem_dqs,                              //                                  .mem_dqs
+		inout  wire [3:0]  memory_mem_dqs_n,                            //                                  .mem_dqs_n
+		output wire        memory_mem_odt,                              //                                  .mem_odt
+		output wire [3:0]  memory_mem_dm,                               //                                  .mem_dm
+		input  wire        memory_oct_rzqin,                            //                                  .oct_rzqin
+		input  wire [1:0]  pushbuttons_export,                          //                       pushbuttons.export
+		input  wire [3:0]  slider_switches_export,                      //                   slider_switches.export
+		output wire [5:0]  stepper_basic_0_state_out_output,            //         stepper_basic_0_state_out.output
+		output wire [5:0]  stepper_basic_divided_0_state_out_state_out, // stepper_basic_divided_0_state_out.state_out
+		input  wire        system_pll_ref_clk_clk,                      //                system_pll_ref_clk.clk
+		input  wire        system_pll_ref_reset_reset                   //              system_pll_ref_reset.reset
 	);
 
-	wire         clock_divider_0_clk_div_clk;                                                       // clock_divider_0:vv_clk -> [rst_controller_005:clk, stepper_basic_0:clock_clk]
-	wire         system_pll_sys_clk_clk;                                                            // System_PLL:sys_clk_clk -> [ADC:clock, ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, Arduino_GPIO:clk, Arduino_Reset_N:clk, Expansion_JP1:clk, Expansion_JP7:clk, F2H_Mem_Window_00000000:clk, F2H_Mem_Window_FF600000:clk, F2H_Mem_Window_FF800000:clk, Interval_Timer:clk, Interval_Timer_2:clk, Interval_Timer_2nd_Core:clk, Interval_Timer_2nd_Core_2:clk, JTAG_UART:clk, JTAG_UART_2nd_Core:clk, JTAG_UART_for_ARM_0:clk, JTAG_UART_for_ARM_1:clk, JTAG_to_FPGA_Bridge:clk_clk, JTAG_to_HPS_Bridge:clk_clk, LEDs:clk, Nios2:clk, Nios2_2nd_Core:clk, Nios2_2nd_Core_SRAM:clk, Nios2_SRAM:clk, Onchip_SRAM:clk, Pushbuttons:clk, Slider_Switches:clk, SysID:clock, clock_divider_0:clk, irq_mapper_002:clk, irq_mapper_003:clk, mm_interconnect_0:System_PLL_sys_clk_clk, mm_interconnect_1:System_PLL_sys_clk_clk, rst_controller:clk, rst_controller_003:clk, rst_controller_004:clk, rst_controller_006:clk]
+	wire         clock_divider_0_clk_div_clk;                                                       // clock_divider_0:clk_div -> [rst_controller_005:clk, stepper_basic_0:clock_clk]
+	wire         system_pll_sys_clk_clk;                                                            // System_PLL:sys_clk_clk -> [ADC:clock, ARM_A9_HPS:f2h_axi_clk, ARM_A9_HPS:h2f_axi_clk, ARM_A9_HPS:h2f_lw_axi_clk, Arduino_GPIO:clk, Arduino_Reset_N:clk, Expansion_JP1:clk, Expansion_JP7:clk, F2H_Mem_Window_00000000:clk, F2H_Mem_Window_FF600000:clk, F2H_Mem_Window_FF800000:clk, Interval_Timer:clk, Interval_Timer_2:clk, Interval_Timer_2nd_Core:clk, Interval_Timer_2nd_Core_2:clk, JTAG_UART:clk, JTAG_UART_2nd_Core:clk, JTAG_UART_for_ARM_0:clk, JTAG_UART_for_ARM_1:clk, JTAG_to_FPGA_Bridge:clk_clk, JTAG_to_HPS_Bridge:clk_clk, LEDs:clk, Nios2:clk, Nios2_2nd_Core:clk, Nios2_2nd_Core_SRAM:clk, Nios2_SRAM:clk, Onchip_SRAM:clk, Pushbuttons:clk, Slider_Switches:clk, SysID:clock, clock_divider_0:clk, irq_mapper_002:clk, irq_mapper_003:clk, mm_interconnect_0:System_PLL_sys_clk_clk, mm_interconnect_1:System_PLL_sys_clk_clk, rst_controller:clk, rst_controller_003:clk, rst_controller_004:clk, rst_controller_006:clk, stepper_basic_divided_0:clock_clk]
 	wire         nios2_custom_instruction_master_readra;                                            // Nios2:D_ci_readra -> Nios2_custom_instruction_master_translator:ci_slave_readra
 	wire   [4:0] nios2_custom_instruction_master_a;                                                 // Nios2:D_ci_a -> Nios2_custom_instruction_master_translator:ci_slave_a
 	wire   [4:0] nios2_custom_instruction_master_b;                                                 // Nios2:D_ci_b -> Nios2_custom_instruction_master_translator:ci_slave_b
@@ -573,7 +575,7 @@ module Computer_System (
 	wire         irq_mapper_receiver5_irq;                                                          // Interval_Timer:irq -> [irq_mapper:receiver5_irq, irq_mapper_002:receiver5_irq]
 	wire         irq_mapper_receiver6_irq;                                                          // Interval_Timer_2:irq -> [irq_mapper:receiver6_irq, irq_mapper_002:receiver6_irq]
 	wire         irq_mapper_receiver0_irq;                                                          // Pushbuttons:irq -> [irq_mapper:receiver0_irq, irq_mapper_002:receiver0_irq, irq_mapper_003:receiver0_irq]
-	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [ADC:reset, Arduino_GPIO:reset_n, Arduino_Reset_N:reset_n, Expansion_JP1:reset_n, Expansion_JP7:reset_n, F2H_Mem_Window_00000000:reset, F2H_Mem_Window_FF600000:reset, F2H_Mem_Window_FF800000:reset, Interval_Timer:reset_n, Interval_Timer_2:reset_n, Interval_Timer_2nd_Core:reset_n, Interval_Timer_2nd_Core_2:reset_n, JTAG_UART:rst_n, JTAG_UART_2nd_Core:rst_n, JTAG_UART_for_ARM_0:rst_n, JTAG_UART_for_ARM_1:rst_n, LEDs:reset_n, Nios2_2nd_Core_SRAM:reset, Nios2_SRAM:reset, Onchip_SRAM:reset, Pushbuttons:reset_n, Slider_Switches:reset_n, SysID:reset_n, clock_divider_0:reset_reset_n, mm_interconnect_0:ADC_reset_reset_bridge_in_reset_reset, mm_interconnect_0:JTAG_to_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:F2H_Mem_Window_00000000_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_to_HPS_Bridge_clk_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [ADC:reset, Arduino_GPIO:reset_n, Arduino_Reset_N:reset_n, Expansion_JP1:reset_n, Expansion_JP7:reset_n, F2H_Mem_Window_00000000:reset, F2H_Mem_Window_FF600000:reset, F2H_Mem_Window_FF800000:reset, Interval_Timer:reset_n, Interval_Timer_2:reset_n, Interval_Timer_2nd_Core:reset_n, Interval_Timer_2nd_Core_2:reset_n, JTAG_UART:rst_n, JTAG_UART_2nd_Core:rst_n, JTAG_UART_for_ARM_0:rst_n, JTAG_UART_for_ARM_1:rst_n, LEDs:reset_n, Nios2_2nd_Core_SRAM:reset, Nios2_SRAM:reset, Onchip_SRAM:reset, Pushbuttons:reset_n, Slider_Switches:reset_n, SysID:reset_n, clock_divider_0:reset_reset_n, mm_interconnect_0:ADC_reset_reset_bridge_in_reset_reset, mm_interconnect_0:JTAG_to_FPGA_Bridge_clk_reset_reset_bridge_in_reset_reset, mm_interconnect_1:F2H_Mem_Window_00000000_reset_reset_bridge_in_reset_reset, mm_interconnect_1:JTAG_to_HPS_Bridge_clk_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, stepper_basic_divided_0:reset_low]
 	wire         rst_controller_reset_out_reset_req;                                                // rst_controller:reset_req -> [Nios2_2nd_Core_SRAM:reset_req, Nios2_SRAM:reset_req, Onchip_SRAM:reset_req, rst_translator:reset_req_in]
 	wire         arm_a9_hps_h2f_reset_reset;                                                        // ARM_A9_HPS:h2f_rst_n -> [rst_controller:reset_in0, rst_controller_001:reset_in0, rst_controller_002:reset_in0, rst_controller_003:reset_in1, rst_controller_004:reset_in1, rst_controller_005:reset_in0, rst_controller_006:reset_in0]
 	wire         system_pll_reset_source_reset;                                                     // System_PLL:reset_source_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in1, rst_controller_002:reset_in1, rst_controller_003:reset_in2, rst_controller_004:reset_in2, rst_controller_005:reset_in1]
@@ -1317,16 +1319,22 @@ module Computer_System (
 		.reset_source_reset (system_pll_reset_source_reset)  // reset_source.reset
 	);
 
-	stepper_control clock_divider_0 (
+	clock_divider clock_divider_0 (
 		.clk           (system_pll_sys_clk_clk),          //         clock.clk
 		.reset_reset_n (~rst_controller_reset_out_reset), // reset_reset_n.reset_n
-		.vv_clk        (clock_divider_0_clk_div_clk)      //       clk_div.clk
+		.clk_div       (clock_divider_0_clk_div_clk)      //       clk_div.clk
 	);
 
 	stepper_control stepper_basic_0 (
 		.clock_clk (clock_divider_0_clk_div_clk),         // clock_clk.clk
 		.reset_low (~rst_controller_005_reset_out_reset), // reset_low.reset_n
-		.state_out ()                                     // state_out.output
+		.state_out (stepper_basic_0_state_out_output)     // state_out.output
+	);
+
+	stepper_control_divided stepper_basic_divided_0 (
+		.clock_clk (system_pll_sys_clk_clk),                      // clock_clk.clk
+		.reset_low (~rst_controller_reset_out_reset),             // reset_low.reset_n
+		.state_out (stepper_basic_divided_0_state_out_state_out)  // state_out.state_out
 	);
 
 	altera_customins_master_translator #(

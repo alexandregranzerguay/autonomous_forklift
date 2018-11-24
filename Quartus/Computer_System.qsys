@@ -105,6 +105,22 @@
          type = "boolean";
       }
    }
+   element Computer_System
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element Computer_System
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element Expansion_JP1
    {
       datum _sortIndex
@@ -609,6 +625,14 @@
          type = "int";
       }
    }
+   element stepper_basic_divided_0
+   {
+      datum _sortIndex
+      {
+         value = "39";
+         type = "int";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -674,6 +698,16 @@
  <interface
    name="slider_switches"
    internal="Slider_Switches.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="stepper_basic_0_state_out"
+   internal="stepper_basic_0.state_out"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="stepper_basic_divided_0_state_out"
+   internal="stepper_basic_divided_0.state_out"
    type="conduit"
    dir="end" />
  <interface
@@ -2117,6 +2151,11 @@
  <module name="clock_divider_0" kind="clock_divider" version="1.0" enabled="1" />
  <module name="my_counter_0" kind="my_counter" version="1.0" enabled="0" />
  <module name="stepper_basic_0" kind="stepper_basic" version="1.0" enabled="1" />
+ <module
+   name="stepper_basic_divided_0"
+   kind="stepper_basic_divided"
+   version="1.0"
+   enabled="1" />
  <connection
    kind="avalon"
    version="17.1"
@@ -3223,6 +3262,11 @@
    kind="clock"
    version="17.1"
    start="System_PLL.sys_clk"
+   end="stepper_basic_divided_0.clock_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="System_PLL.sys_clk"
    end="ARM_A9_HPS.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -3602,6 +3646,11 @@
    kind="reset"
    version="17.1"
    start="ARM_A9_HPS.h2f_reset"
+   end="stepper_basic_divided_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_reset"
    end="my_counter_0.reset_reset_n" />
  <connection
    kind="reset"
@@ -3768,6 +3817,11 @@
    version="17.1"
    start="System_PLL.reset_source"
    end="stepper_basic_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="System_PLL.reset_source"
+   end="stepper_basic_divided_0.reset_low" />
  <connection
    kind="reset"
    version="17.1"
