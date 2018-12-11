@@ -17,8 +17,9 @@ module DE10_Nano_Computer (
 	
 	// ARDUINO
 	//inout       [15:0] ARDUINO_IO,
-	output			[5:0] MOTOR,
-	output			[5:0] MOTOR_DIV,
+	output				 SERVO,
+	output				 HIGH,
+	output				 GND,
 	inout              ARDUINO_RESET_N,
 	
 	// GPIO
@@ -155,8 +156,9 @@ Computer_System The_System (
 
 	// Arduino GPIO
 	//.arduino_gpio_export				(ARDUINO_IO),
-	.stepper_basic_0_state_out_output				(MOTOR),
-	.stepper_basic_divided_0_state_out_state_out				(MOTOR_DIV),
+	.servo_basic_0_pwm_out_new_signal				(SERVO),
+	.servo_basic_0_high_new_signal				(HIGH),
+	.servo_basic_0_gnd_new_signal				(GND),
 
 	// Arduino Reset_n
 	.arduino_reset_n_export				(ARDUINO_RESET_N),

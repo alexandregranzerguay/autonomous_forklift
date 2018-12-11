@@ -617,6 +617,14 @@
          type = "String";
       }
    }
+   element servo_basic_0
+   {
+      datum _sortIndex
+      {
+         value = "40";
+         type = "int";
+      }
+   }
    element stepper_basic_0
    {
       datum _sortIndex
@@ -696,20 +704,29 @@
    type="conduit"
    dir="end" />
  <interface
+   name="servo_basic_0_gnd"
+   internal="servo_basic_0.gnd"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="servo_basic_0_high"
+   internal="servo_basic_0.high"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="servo_basic_0_pwm_out"
+   internal="servo_basic_0.pwm_out"
+   type="conduit"
+   dir="end" />
+ <interface
    name="slider_switches"
    internal="Slider_Switches.external_connection"
    type="conduit"
    dir="end" />
- <interface
-   name="stepper_basic_0_state_out"
-   internal="stepper_basic_0.state_out"
-   type="conduit"
-   dir="end" />
+ <interface name="stepper_basic_0_state_out" internal="stepper_basic_0.state_out" />
  <interface
    name="stepper_basic_divided_0_state_out"
-   internal="stepper_basic_divided_0.state_out"
-   type="conduit"
-   dir="end" />
+   internal="stepper_basic_divided_0.state_out" />
  <interface
    name="system_pll_ref_clk"
    internal="System_PLL.ref_clk"
@@ -2148,14 +2165,15 @@
   <parameter name="vga_clk_en" value="true" />
   <parameter name="video_in_clk_en" value="false" />
  </module>
- <module name="clock_divider_0" kind="clock_divider" version="1.0" enabled="1" />
+ <module name="clock_divider_0" kind="clock_divider" version="1.0" enabled="0" />
  <module name="my_counter_0" kind="my_counter" version="1.0" enabled="0" />
- <module name="stepper_basic_0" kind="stepper_basic" version="1.0" enabled="1" />
+ <module name="servo_basic_0" kind="servo_basic" version="1.0" enabled="1" />
+ <module name="stepper_basic_0" kind="stepper_basic" version="1.0" enabled="0" />
  <module
    name="stepper_basic_divided_0"
    kind="stepper_basic_divided"
    version="1.0"
-   enabled="1" />
+   enabled="0" />
  <connection
    kind="avalon"
    version="17.1"
@@ -3267,6 +3285,11 @@
    kind="clock"
    version="17.1"
    start="System_PLL.sys_clk"
+   end="servo_basic_0.clock_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="System_PLL.sys_clk"
    end="ARM_A9_HPS.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -3651,6 +3674,11 @@
    kind="reset"
    version="17.1"
    start="ARM_A9_HPS.h2f_reset"
+   end="servo_basic_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_reset"
    end="my_counter_0.reset_reset_n" />
  <connection
    kind="reset"
@@ -3822,6 +3850,11 @@
    version="17.1"
    start="System_PLL.reset_source"
    end="stepper_basic_divided_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="System_PLL.reset_source"
+   end="servo_basic_0.reset_low" />
  <connection
    kind="reset"
    version="17.1"
