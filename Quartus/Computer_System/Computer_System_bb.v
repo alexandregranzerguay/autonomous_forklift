@@ -75,10 +75,11 @@ module Computer_System (
 	memory_oct_rzqin,
 	pushbuttons_export,
 	slider_switches_export,
-	stepper_basic_0_state_out_output,
 	system_pll_ref_clk_clk,
 	system_pll_ref_reset_reset,
-	stepper_basic_divided_0_state_out_state_out);	
+	servo_basic_0_pwm_out_new_signal,
+	servo_basic_0_high_new_signal,
+	servo_basic_0_gnd_new_signal);	
 
 	output		adc_sclk;
 	output		adc_cs_n;
@@ -155,8 +156,9 @@ module Computer_System (
 	input		memory_oct_rzqin;
 	input	[1:0]	pushbuttons_export;
 	input	[3:0]	slider_switches_export;
-	output	[5:0]	stepper_basic_0_state_out_output;
 	input		system_pll_ref_clk_clk;
 	input		system_pll_ref_reset_reset;
-	output	[5:0]	stepper_basic_divided_0_state_out_state_out;
+	output		servo_basic_0_pwm_out_new_signal;
+	output		servo_basic_0_high_new_signal;
+	output		servo_basic_0_gnd_new_signal;
 endmodule

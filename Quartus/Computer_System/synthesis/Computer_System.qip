@@ -2,7 +2,7 @@ set_global_assignment -entity "Computer_System" -library "Computer_System" -name
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_TOOL_VERSION "17.1"
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "Computer_System" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../Computer_System.sopcinfo"]
-set_global_assignment -entity "Computer_System" -library "Computer_System" -name SLD_INFO "QSYS_NAME Computer_System HAS_SOPCINFO 1 GENERATION_ID 1543081199"
+set_global_assignment -entity "Computer_System" -library "Computer_System" -name SLD_INFO "QSYS_NAME Computer_System HAS_SOPCINFO 1 GENERATION_ID 1544380004"
 set_global_assignment -library "Computer_System" -name MISC_FILE [file join $::quartus(qip_path) "../Computer_System.cmp"]
 set_global_assignment -library "Computer_System" -name SLD_FILE [file join $::quartus(qip_path) "Computer_System.regmap"]
 set_global_assignment -library "Computer_System" -name MISC_FILE [file join $::quartus(qip_path) "../../C"]
@@ -18,7 +18,7 @@ set_global_assignment -entity "Computer_System" -library "Computer_System" -name
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU0MzA4MTE5OQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU0NDM4MDAwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
 set_global_assignment -entity "Computer_System" -library "Computer_System" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -1659,21 +1659,11 @@ set_global_assignment -entity "altera_customins_master_translator" -library "Com
 set_global_assignment -entity "altera_customins_master_translator" -library "Computer_System" -name IP_COMPONENT_PARAMETER "VVNFX01VTFRJX1JFQURSQg==::MQ==::VVNFX01VTFRJX1JFQURSQg=="
 set_global_assignment -entity "altera_customins_master_translator" -library "Computer_System" -name IP_COMPONENT_PARAMETER "VVNFX01VTFRJX1dSSVRFUkM=::MQ==::VVNFX01VTFRJX1dSSVRFUkM="
 set_global_assignment -entity "altera_customins_master_translator" -library "Computer_System" -name IP_COMPONENT_PARAMETER "U0hBUkVEX0NPTUJfQU5EX01VTFRJ::MQ==::U0hBUkVEX0NPTUJfQU5EX01VTFRJ"
-set_global_assignment -entity "stepper_control_divided" -library "Computer_System" -name IP_COMPONENT_NAME "c3RlcHBlcl9jb250cm9sX2RpdmlkZWQ="
-set_global_assignment -entity "stepper_control_divided" -library "Computer_System" -name IP_COMPONENT_DISPLAY_NAME "c3RlcHBlcl9iYXNpY19kaXZpZGVk"
-set_global_assignment -entity "stepper_control_divided" -library "Computer_System" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
-set_global_assignment -entity "stepper_control_divided" -library "Computer_System" -name IP_COMPONENT_INTERNAL "Off"
-set_global_assignment -entity "stepper_control_divided" -library "Computer_System" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "stepper_control" -library "Computer_System" -name IP_COMPONENT_NAME "c3RlcHBlcl9jb250cm9s"
-set_global_assignment -entity "stepper_control" -library "Computer_System" -name IP_COMPONENT_DISPLAY_NAME "c3RlcHBlcl9iYXNpYw=="
-set_global_assignment -entity "stepper_control" -library "Computer_System" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
-set_global_assignment -entity "stepper_control" -library "Computer_System" -name IP_COMPONENT_INTERNAL "Off"
-set_global_assignment -entity "stepper_control" -library "Computer_System" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "clock_divider" -library "Computer_System" -name IP_COMPONENT_NAME "Y2xvY2tfZGl2aWRlcg=="
-set_global_assignment -entity "clock_divider" -library "Computer_System" -name IP_COMPONENT_DISPLAY_NAME "Y2xvY2tfZGl2aWRlcg=="
-set_global_assignment -entity "clock_divider" -library "Computer_System" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
-set_global_assignment -entity "clock_divider" -library "Computer_System" -name IP_COMPONENT_INTERNAL "Off"
-set_global_assignment -entity "clock_divider" -library "Computer_System" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "servo_basic" -library "Computer_System" -name IP_COMPONENT_NAME "c2Vydm9fYmFzaWM="
+set_global_assignment -entity "servo_basic" -library "Computer_System" -name IP_COMPONENT_DISPLAY_NAME "c2Vydm9fYmFzaWM="
+set_global_assignment -entity "servo_basic" -library "Computer_System" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "servo_basic" -library "Computer_System" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "servo_basic" -library "Computer_System" -name IP_COMPONENT_VERSION "MS4w"
 set_global_assignment -entity "Computer_System_System_PLL" -library "Computer_System" -name IP_COMPONENT_NAME "Q29tcHV0ZXJfU3lzdGVtX1N5c3RlbV9QTEw="
 set_global_assignment -entity "Computer_System_System_PLL" -library "Computer_System" -name IP_COMPONENT_DISPLAY_NAME "U3lzdGVtIGFuZCBTRFJBTSBDbG9ja3MgZm9yIERFLXNlcmllcyBCb2FyZHM="
 set_global_assignment -entity "Computer_System_System_PLL" -library "Computer_System" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
@@ -8938,9 +8928,7 @@ set_global_assignment -library "Computer_System" -name SYSTEMVERILOG_FILE [file 
 set_global_assignment -library "Computer_System" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_slave_translator.sv"]
 set_global_assignment -library "Computer_System" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/Computer_System_Nios2_custom_instruction_master_multi_xconnect.sv"]
 set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_master_translator.v"]
-set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Stepper_basic_divided.v"]
-set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Stepper_basic.v"]
-set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Clock_Divider.v"]
+set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/servo_basic.v"]
 set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Computer_System_System_PLL.v"]
 set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_avalon_reset_from_locked_signal.v"]
 set_global_assignment -library "Computer_System" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Computer_System_System_PLL_sys_pll.v"]

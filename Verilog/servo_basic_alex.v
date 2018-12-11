@@ -1,5 +1,5 @@
 // Initial attempt at stepper motor control
-module servo_basic(input clock_clk, input reset_low, output reg pwm_out);
+module servo_basic(input clock_clk, input reset_low, output reg pwm_out, output high, output gnd);
 	reg next_out;
 	reg [31:0] count;
 	
@@ -15,6 +15,7 @@ module servo_basic(input clock_clk, input reset_low, output reg pwm_out);
 		end
 	end
 	
+<<<<<<< HEAD:Verilog/servo_basic_alex.v
 	// Move FSM when clock cycles
 	always @(posedge clock_clk or negedge reset_low) begin
 		if (reset_low == 0) begin
@@ -27,4 +28,9 @@ module servo_basic(input clock_clk, input reset_low, output reg pwm_out);
 			end
 		end
 	end
+=======
+	assign high = 1;
+	assign gnd = 0;
+	
+>>>>>>> e809a803e611a80a96479a262e2fc2f971a10a1c:Verilog/servo_basic.v
 endmodule

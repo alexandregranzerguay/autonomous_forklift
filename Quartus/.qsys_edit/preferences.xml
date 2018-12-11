@@ -5,7 +5,11 @@
   <columns>
    <connections preferredWidth="415" />
    <irq preferredWidth="79" />
+<<<<<<< HEAD
    <name preferredWidth="309" />
+=======
+   <export preferredWidth="186" />
+>>>>>>> e809a803e611a80a96479a262e2fc2f971a10a1c
   </columns>
  </systemtable>
  <library expandedCategories="Project/System,Project,Library" />
