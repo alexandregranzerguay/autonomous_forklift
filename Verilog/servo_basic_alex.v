@@ -6,19 +6,6 @@ module servo_basic(input clock_clk, input reset_low, output reg pwm_out);
 	localparam totalTime = 100000000;
 	localparam halfTime = 70000000;
 	
-	// Move FSM when clock cycles
-	always @(clock_clk or reset_low) begin
-		if (reset_low == 0) begin
-			count <= 0;
-		end
-		else if (clock_clk == 1) begin
-			count <= count + 1;
-		end
-		if (count == totalTime - 1) begin
-			count <= 0;
-		end
-	end
-	
 	always @(count) begin
 		if (count > halfTime) begin
 			pwm_out <= 0;
@@ -28,4 +15,16 @@ module servo_basic(input clock_clk, input reset_low, output reg pwm_out);
 		end
 	end
 	
+	// Move FSM when clock cycles
+	always @(posedge clock_clk or negedge reset_low) begin
+		if (reset_low == 0) begin
+			count <= 0;
+		end
+		else begin
+			count <= count + 1;
+			if (count == totalTime - 1) begin
+				count <= 0;
+			end
+		end
+	end
 endmodule
