@@ -156,14 +156,9 @@ Computer_System The_System (
 
 	// Arduino GPIO
 	//.arduino_gpio_export				(ARDUINO_IO),
-<<<<<<< HEAD
-//	.stepper_basic_0_state_out_output				(MOTOR),
-//	.stepper_basic_divided_0_state_out_state_out				(MOTOR_DIV),
-=======
 	.servo_basic_0_pwm_out_new_signal				(SERVO),
 	.servo_basic_0_high_new_signal				(HIGH),
 	.servo_basic_0_gnd_new_signal				(GND),
->>>>>>> e809a803e611a80a96479a262e2fc2f971a10a1c
 
 	// Arduino Reset_n
 	.arduino_reset_n_export				(ARDUINO_RESET_N),

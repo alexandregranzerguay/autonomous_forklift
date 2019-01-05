@@ -15,7 +15,6 @@ module servo_basic(input clock_clk, input reset_low, output reg pwm_out, output 
 		end
 	end
 	
-<<<<<<< HEAD:Verilog/servo_basic_alex.v
 	// Move FSM when clock cycles
 	always @(posedge clock_clk or negedge reset_low) begin
 		if (reset_low == 0) begin
@@ -28,9 +27,4 @@ module servo_basic(input clock_clk, input reset_low, output reg pwm_out, output 
 			end
 		end
 	end
-=======
-	assign high = 1;
-	assign gnd = 0;
-	
->>>>>>> e809a803e611a80a96479a262e2fc2f971a10a1c:Verilog/servo_basic.v
 endmodule
