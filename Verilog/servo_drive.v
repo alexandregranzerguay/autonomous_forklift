@@ -1,11 +1,12 @@
-// Initial attempt at stepper motor control
-module servo_basic(input clock_clk, input reset_low, output reg pwm_out, output high, output gnd);
+// Servo drive control module
+module servo_drive(input clock_clk, input reset_low, input [31:0] pulseTime, output reg pwm_out);
+	reg next_out;
 	reg [31:0] count;
 	
+	// Total pulse width
 	localparam totalTime = 10;
-	localparam halfTime = 1;
 	
-	// Move FSM when clock cycles
+	// Handle resets and increase count on positive clock edges
 	always @(clock_clk or reset_low) begin
 		if (reset_low == 0) begin
 			count <= 0;
@@ -18,16 +19,14 @@ module servo_basic(input clock_clk, input reset_low, output reg pwm_out, output 
 		end
 	end
 	
+	// Determine pulse output based on count and pulseTime
 	always @(count) begin
-		if (count >= halfTime) begin
+		if (count >= pulseTime) begin
 			pwm_out <= 0;
 		end
 		else begin
 			pwm_out <= 1;
 		end
 	end
-	
-	assign high = 1;
-	assign gnd = 0;
 	
 endmodule

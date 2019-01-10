@@ -8,35 +8,98 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA_lite/17.1
-vservo_basic
-Z0 !s110 1543611311
+vservo_avalon
+Z0 !s110 1547156752
 !i10b 1
-!s100 W_Ha0JkfmMJbh@^6b6e8S2
-I6iNRMA5WDz_TEJ4K=CZjj0
+!s100 n]if^G6QIR647<GlDF]l82
+Ied9Rk]0N:Ri4HazAMbz7G1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog
-w1543611302
-8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v
-FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v
+w1547156540
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v
 L0 2
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1543611311.000000
-!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
+Z4 !s108 1547156752.000000
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
 !i113 1
 Z5 o-work work
 Z6 tCvgOpt 0
+vservo_basic
+R0
+!i10b 1
+!s100 h3TLTnn@anchBIj@n9Ahd3
+I4_5gBkeULPjYY@6g]Mo5n3
+R1
+R2
+w1547153097
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
+!i113 1
+R5
+R6
+vservo_drive
+R0
+!i10b 1
+!s100 LPZ2kT[Nb]gWOTTFJ9X[Y0
+IFGUPO5efI]`4CcmO]f7bo0
+R1
+R2
+w1547150833
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v|
+!i113 1
+R5
+R6
+vservo_feedback
+R0
+!i10b 1
+!s100 gbIUj40f5RcRijeKm30d62
+IRUA<d4<folkHiNDzHe2Z>3
+R1
+R2
+w1547156374
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v|
+!i113 1
+R5
+R6
 vtest_bench
 R0
 !i10b 1
-!s100 aJ9HMMz_1ez;30H:MDI_Y3
-IYTP5KSKOD:IdWS=Zd]WL=2
+!s100 _;A;zl@8m8BS6z]nn11`l3
+INM07Sa4L_OVWXLG4eB1Rn3
 R1
 R2
-w1543611183
+w1547156743
 8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v
 FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v
 L0 2

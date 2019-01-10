@@ -5,6 +5,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	servo_basic
 
+} {} {}} {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v} {1 {vlog -work work -stats=none {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module stepper_control_divided
+
+Top level modules:
+	stepper_control_divided
+
 } {} {}} {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic.v} {1 {vlog -work work -stats=none {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module stepper_control
@@ -12,12 +19,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	stepper_control
 
-} {} {}} {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v} {1 {vlog -work work -stats=none {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/Stepper_basic_divided.v}
+} {} {}} {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v} {1 {vlog -work work -stats=none {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module stepper_control_divided
+-- Compiling module servo_drive
 
 Top level modules:
-	stepper_control_divided
+	servo_drive
 
 } {} {}} {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v} {1 {vlog -work work -stats=none {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -32,5 +39,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	clock_divider
+
+} {} {}} {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v} {1 {vlog -work work -stats=none {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module servo_avalon
+
+Top level modules:
+	servo_avalon
+
+} {} {}} {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v} {1 {vlog -work work -stats=none {C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module servo_feedback
+
+Top level modules:
+	servo_feedback
 
 } {} {}}

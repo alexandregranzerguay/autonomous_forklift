@@ -637,17 +637,8 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_location_assignment PIN_AG13 -to MOTOR[0]
-set_location_assignment PIN_AF13 -to MOTOR[1]
-set_location_assignment PIN_AG10 -to MOTOR[2]
-set_location_assignment PIN_AG9 -to MOTOR[3]
-set_location_assignment PIN_U14 -to MOTOR[4]
-set_location_assignment PIN_U13 -to MOTOR[5]
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_location_assignment PIN_AE15 -to MOTOR_DIV[3]
-set_location_assignment PIN_AF15 -to MOTOR_DIV[4]
-set_location_assignment PIN_AG16 -to MOTOR_DIV[5]
 set_global_assignment -name QIP_FILE Computer_System/synthesis/Computer_System.qip
 set_global_assignment -name SDC_FILE DE10_Nano_Computer.sdc
 set_global_assignment -name VERILOG_FILE DE10_Nano_Computer.v
