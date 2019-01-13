@@ -5,9 +5,6 @@ module servo_avalon(input clock_clk, input reset_low, input read, input write, i
 	reg [31:0] speed;
 	wire [31:0] angle;
 	
-	// Total pulse width
-	localparam totalTime = 10;
-	
 	always @(clock_clk or reset_low) begin
 		if (reset_low == 0) begin
 			readdata <= 0;

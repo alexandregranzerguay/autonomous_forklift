@@ -6,21 +6,20 @@ module servo_feedback(input clock_clk, input reset_low, input pwm_response, outp
 	//localparam totalTime = 10;
 	
 	// Handle resets and increase count on positive clock edges
-	always @(clock_clk or reset_low) begin
+	always @(posedge clock_clk or negedge reset_low) begin
 		if (reset_low == 0) begin
 			count <= 0;
 		end
-		else if (clock_clk == 1 & pwm_response == 1) begin
-			if (pwm_response == 1) begin
-				count <= count + 1;
-			end
-			else begin
-				if (count > 0) begin
-					angle <= count;
-				end
-				count <= 0;
-			end
+		else if (pwm_response == 1) begin
+			count <= count + 1;
 		end
+	end
+	
+	always @(negedge pwm_response) begin
+		if (count > 0) begin
+			angle <= count;
+		end
+		count <= 0;
 	end
 	
 endmodule

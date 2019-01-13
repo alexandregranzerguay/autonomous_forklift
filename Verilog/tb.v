@@ -16,7 +16,7 @@ module test_bench;
 	end
 	
 	initial begin
-		clk <= 0;
+		clk <= 1;
 		pulseTime <= 3;
 		read <= 0;
 		write <= 0;
@@ -39,8 +39,15 @@ module test_bench;
 		read <= 0;
 		# 10
 		read <= 1;
-		
-		
+		pwm_response <= 1;
+		# 40
+		pwm_response <= 0;
+		# 10
+		read <= 0;
+		write <= 1;
+		pulseTime <= 5;
+		# 1
+		write <= 0;
 		
 	end
 	

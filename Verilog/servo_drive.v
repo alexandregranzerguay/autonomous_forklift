@@ -4,14 +4,15 @@ module servo_drive(input clock_clk, input reset_low, input [31:0] pulseTime, out
 	reg [31:0] count;
 	
 	// Total pulse width
+	//localparam totalTime = 2000000;
 	localparam totalTime = 10;
 	
 	// Handle resets and increase count on positive clock edges
-	always @(clock_clk or reset_low) begin
+	always @(posedge clock_clk or negedge reset_low) begin
 		if (reset_low == 0) begin
 			count <= 0;
 		end
-		else if (clock_clk == 1) begin
+		else begin
 			count <= count + 1;
 			if (count == totalTime - 1) begin
 				count <= 0;
