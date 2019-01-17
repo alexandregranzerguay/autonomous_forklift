@@ -74,12 +74,14 @@ module Computer_System (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	pushbuttons_export,
+	servo_avalon_0_pwm_out_new_signal,
+	servo_avalon_0_pwm_response_new_signal,
+	servo_basic_0_gnd_new_signal,
+	servo_basic_0_high_new_signal,
+	servo_basic_0_pwm_out_new_signal,
 	slider_switches_export,
 	system_pll_ref_clk_clk,
-	system_pll_ref_reset_reset,
-	servo_basic_0_pwm_out_new_signal,
-	servo_basic_0_high_new_signal,
-	servo_basic_0_gnd_new_signal);	
+	system_pll_ref_reset_reset);	
 
 	output		adc_sclk;
 	output		adc_cs_n;
@@ -155,10 +157,12 @@ module Computer_System (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input	[1:0]	pushbuttons_export;
+	output		servo_avalon_0_pwm_out_new_signal;
+	input		servo_avalon_0_pwm_response_new_signal;
+	output		servo_basic_0_gnd_new_signal;
+	output		servo_basic_0_high_new_signal;
+	output		servo_basic_0_pwm_out_new_signal;
 	input	[3:0]	slider_switches_export;
 	input		system_pll_ref_clk_clk;
 	input		system_pll_ref_reset_reset;
-	output		servo_basic_0_pwm_out_new_signal;
-	output		servo_basic_0_high_new_signal;
-	output		servo_basic_0_gnd_new_signal;
 endmodule

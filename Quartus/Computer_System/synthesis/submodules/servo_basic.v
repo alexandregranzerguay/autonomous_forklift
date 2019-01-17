@@ -1,26 +1,25 @@
 // Initial attempt at stepper motor control
 module servo_basic(input clock_clk, input reset_low, output reg pwm_out, output high, output gnd);
-	reg next_out;
 	reg [31:0] count;
 	
-	localparam totalTime = 100000000;
-	localparam halfTime = 70000000;
+	localparam totalTime = 2000000;
+	localparam halfTime = 165000;
 	
 	// Move FSM when clock cycles
-	always @(clock_clk or reset_low) begin
+	always @(posedge clock_clk or negedge reset_low) begin
 		if (reset_low == 0) begin
 			count <= 0;
 		end
-		else if (clock_clk == 1) begin
+		else begin
 			count <= count + 1;
-		end
-		if (count == totalTime - 1) begin
-			count <= 0;
+			if (count == totalTime - 1) begin
+				count <= 0;
+			end
 		end
 	end
 	
 	always @(count) begin
-		if (count > halfTime) begin
+		if (count >= halfTime) begin
 			pwm_out <= 0;
 		end
 		else begin

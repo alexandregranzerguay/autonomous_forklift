@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA_lite/17.1
 vservo_avalon
-Z0 !s110 1547411945
+Z0 !s110 1547524268
 !i10b 1
 !s100 RW:IkW>MY500WW3C=l4<h3
 IBFT[MiefJ_?ogAkk;eN6c3
@@ -23,14 +23,14 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1547411945.000000
+Z4 !s108 1547524268.000000
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
 !i113 1
 Z5 o-work work
 Z6 tCvgOpt 0
 vservo_basic
-Z7 !s110 1547411944
+R0
 !i10b 1
 !s100 _fSkA0zfO;AgWD0?[jiiT0
 IIo75mkdcWQ@G7JVWM]gnP3
@@ -44,14 +44,14 @@ R3
 r1
 !s85 0
 31
-Z8 !s108 1547411944.000000
+R4
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
 !i113 1
 R5
 R6
 vservo_drive
-R7
+R0
 !i10b 1
 !s100 AO7ERXHiTcAd4;UETS<C81
 I<73e=>M[NZ4AUJ7k=A[>Y0
@@ -65,7 +65,7 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v|
 !i113 1
@@ -74,11 +74,11 @@ R6
 vservo_feedback
 R0
 !i10b 1
-!s100 l1Mj=cD3fddUO8QFGNl3l0
-IZfNzKoE3jZ^PgNCnl[^V:3
+!s100 =YF5V:<0K:Ag_:inFZMDz3
+I6g;ikW^gC5z?n[U9[Q:zO0
 R1
 R2
-w1547411607
+w1547524251
 8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v
 FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v
 L0 2
@@ -93,7 +93,7 @@ R4
 R5
 R6
 vtest_bench
-R7
+R0
 !i10b 1
 !s100 :K<g9:_1EXR:GWIJ9h9HQ0
 I9JjL?S4CRY[N`1Q;7]DZh2
@@ -107,7 +107,7 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v|
 !i113 1

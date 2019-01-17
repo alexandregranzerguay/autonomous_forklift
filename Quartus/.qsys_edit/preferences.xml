@@ -5,10 +5,10 @@
   <columns>
    <connections preferredWidth="415" />
    <irq preferredWidth="79" />
-   <export preferredWidth="186" />
+   <export preferredWidth="152" />
   </columns>
  </systemtable>
- <library expandedCategories="Project/System,Project,Library" />
- <window width="1620" height="1741" x="1591" y="0" />
+ <library expandedCategories="Library,Project" />
+ <window width="2263" height="1260" x="0" y="0" />
  <generation path="_PROJECT_NAME_" />
 </preferences>

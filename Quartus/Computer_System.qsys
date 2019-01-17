@@ -121,6 +121,30 @@
          type = "String";
       }
    }
+   element Computer_System
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element Computer_System
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element Computer_System
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element Expansion_JP1
    {
       datum _sortIndex
@@ -593,7 +617,7 @@
          type = "int";
       }
    }
-   element clock_divider_0
+   element servo_avalon_0
    {
       datum _sortIndex
       {
@@ -601,43 +625,11 @@
          type = "int";
       }
    }
-   element my_counter_0
-   {
-      datum _sortIndex
-      {
-         value = "36";
-         type = "int";
-      }
-   }
-   element my_counter_0.avalon_slave
-   {
-      datum baseAddress
-      {
-         value = "16";
-         type = "String";
-      }
-   }
    element servo_basic_0
    {
       datum _sortIndex
       {
-         value = "40";
-         type = "int";
-      }
-   }
-   element stepper_basic_0
-   {
-      datum _sortIndex
-      {
-         value = "38";
-         type = "int";
-      }
-   }
-   element stepper_basic_divided_0
-   {
-      datum _sortIndex
-      {
-         value = "39";
+         value = "36";
          type = "int";
       }
    }
@@ -655,7 +647,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="forklift.qpf" />
+ <parameter name="projectName">DE10_Nano_Computer.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -691,16 +683,30 @@
    internal="Expansion_JP7.external_connection"
    type="conduit"
    dir="end" />
+ <interface name="gnd_export" internal="servo_basic_0.gnd_conduit" />
+ <interface name="high_export" internal="servo_basic_0.high_conduit" />
  <interface name="hps_io" internal="ARM_A9_HPS.hps_io" type="conduit" dir="end" />
  <interface
    name="leds"
    internal="LEDs.external_connection"
    type="conduit"
    dir="end" />
+ <interface name="low_export" internal="servo_basic_0.low_conduit" />
  <interface name="memory" internal="ARM_A9_HPS.memory" type="conduit" dir="end" />
  <interface
    name="pushbuttons"
    internal="Pushbuttons.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface name="pwm_export" internal="servo_basic_0.pwm" />
+ <interface
+   name="servo_avalon_0_pwm_out"
+   internal="servo_avalon_0.pwm_out"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="servo_avalon_0_pwm_response"
+   internal="servo_avalon_0.pwm_response"
    type="conduit"
    dir="end" />
  <interface
@@ -723,10 +729,6 @@
    internal="Slider_Switches.external_connection"
    type="conduit"
    dir="end" />
- <interface name="stepper_basic_0_state_out" internal="stepper_basic_0.state_out" />
- <interface
-   name="stepper_basic_divided_0_state_out"
-   internal="stepper_basic_divided_0.state_out" />
  <interface
    name="system_pll_ref_clk"
    internal="System_PLL.ref_clk"
@@ -2165,15 +2167,8 @@
   <parameter name="vga_clk_en" value="true" />
   <parameter name="video_in_clk_en" value="false" />
  </module>
- <module name="clock_divider_0" kind="clock_divider" version="1.0" enabled="0" />
- <module name="my_counter_0" kind="my_counter" version="1.0" enabled="0" />
+ <module name="servo_avalon_0" kind="servo_avalon" version="1.0" enabled="1" />
  <module name="servo_basic_0" kind="servo_basic" version="1.0" enabled="1" />
- <module name="stepper_basic_0" kind="stepper_basic" version="1.0" enabled="0" />
- <module
-   name="stepper_basic_divided_0"
-   kind="stepper_basic_divided"
-   version="1.0"
-   enabled="0" />
  <connection
    kind="avalon"
    version="17.1"
@@ -2687,7 +2682,7 @@
    kind="avalon"
    version="17.1"
    start="ARM_A9_HPS.h2f_lw_axi_master"
-   end="my_counter_0.avalon_slave">
+   end="servo_avalon_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0010" />
   <parameter name="defaultConnection" value="false" />
@@ -3127,11 +3122,6 @@
  <connection
    kind="clock"
    version="17.1"
-   start="clock_divider_0.clk_div"
-   end="stepper_basic_0.clock_clk" />
- <connection
-   kind="clock"
-   version="17.1"
    start="System_PLL.sys_clk"
    end="Nios2.clk" />
  <connection
@@ -3270,17 +3260,7 @@
    kind="clock"
    version="17.1"
    start="System_PLL.sys_clk"
-   end="clock_divider_0.clock" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="System_PLL.sys_clk"
-   end="my_counter_0.clock_clk" />
- <connection
-   kind="clock"
-   version="17.1"
-   start="System_PLL.sys_clk"
-   end="stepper_basic_divided_0.clock_clk" />
+   end="servo_avalon_0.clock_clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -3664,27 +3644,12 @@
    kind="reset"
    version="17.1"
    start="ARM_A9_HPS.h2f_reset"
-   end="stepper_basic_0.reset_low" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="ARM_A9_HPS.h2f_reset"
-   end="stepper_basic_divided_0.reset_low" />
+   end="servo_avalon_0.reset_low" />
  <connection
    kind="reset"
    version="17.1"
    start="ARM_A9_HPS.h2f_reset"
    end="servo_basic_0.reset_low" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="ARM_A9_HPS.h2f_reset"
-   end="my_counter_0.reset_reset_n" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="ARM_A9_HPS.h2f_reset"
-   end="clock_divider_0.reset_reset_n" />
  <connection
    kind="reset"
    version="17.1"
@@ -3844,27 +3809,12 @@
    kind="reset"
    version="17.1"
    start="System_PLL.reset_source"
-   end="stepper_basic_0.reset_low" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="System_PLL.reset_source"
-   end="stepper_basic_divided_0.reset_low" />
+   end="servo_avalon_0.reset_low" />
  <connection
    kind="reset"
    version="17.1"
    start="System_PLL.reset_source"
    end="servo_basic_0.reset_low" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="System_PLL.reset_source"
-   end="my_counter_0.reset_reset_n" />
- <connection
-   kind="reset"
-   version="17.1"
-   start="System_PLL.reset_source"
-   end="clock_divider_0.reset_reset_n" />
  <connection
    kind="reset"
    version="17.1"
