@@ -3,6 +3,9 @@
 */
 #include "server.h"
 
+int get_instructions(){
+    
+}
  
 int main(int argc , char *argv[])
 {

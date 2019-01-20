@@ -51,6 +51,9 @@ int tokenize(char* client_message, char args[MAX_ARGS][MAX_ARG_SIZE]) {
 	char* token = strtok(client_message, " ");
 	int i = 0;
 	while (token && i < MAX_ARGS) {
+        if(token == NULL){
+            break;
+        }
 		strncpy(args[i], token, MAX_ARG_SIZE);
 		token = strtok(NULL, " ");
 		i++;
