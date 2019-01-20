@@ -14,12 +14,12 @@ int init_server()
 		return -1;
     }
     puts("Socket created");
-     
+    
     //Prepare the sockaddr_in structure
     server.sin_family = AF_INET;
     server.sin_addr.s_addr = INADDR_ANY;
     server.sin_port = htons( PORT );
-     
+    
     //Bind
     if( bind(socket_desc,(struct sockaddr *)&server , sizeof(server)) < 0)
     {
@@ -28,10 +28,10 @@ int init_server()
         return -1;
     }
     puts("bind done");
-     
+    
     //Listen
     listen(socket_desc , 3);
-     
+    
     //Accept and incoming connection
     puts("Waiting for incoming connections...");
     c = sizeof(struct sockaddr_in);
