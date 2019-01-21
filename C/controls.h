@@ -2,6 +2,8 @@
 #define CONTROLS_H_
 
 #include <stdio.h>
+#include <math.h>
+#include "servoconfig.h"
 
 float distance_to_rotations(float distance);
 

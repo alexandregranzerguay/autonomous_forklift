@@ -1,14 +1,5 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/mman.h>
-#include "address_map_arm.h"
+#include "servoconfig.h"
 
-/* Prototypes for functions used to access physical memory addresses */
-int open_physical (int);
-void * map_physical (int, unsigned int, unsigned int);
-void close_physical (int);
-int unmap_physical (void *, unsigned int);
 int fd = -1;               // used to open /dev/mem for access to physical addresses
 void *LW_virtual;          // used to map physical addresses for the light-weight bridge
 
@@ -27,7 +18,7 @@ int close_servos(void){
 }
 
 // This program writes a PWM value to servos
-int servo_write(int argc, char **argv){
+int servo_write_R(int argc, char **argv){
     if(argc < 2) {
 	    printf("Please supply argument for value to write to servo");
 	    return 0;
@@ -45,7 +36,39 @@ int servo_write(int argc, char **argv){
     return 0;
 }
 
-int servo_feedback(void){
+// This program writes a PWM value to servos
+int servo_write_L(int argc, char **argv){
+    if(argc < 2) {
+	    printf("Please supply argument for value to write to servo");
+	    return 0;
+    }
+
+    volatile int * CTR_ptr;   // virtual address pointer to servos
+
+    // Value to be written on servo
+    int write_val = atoi(argv[1]);
+
+    // Set virtual address pointer to I/O port
+    CTR_ptr = (unsigned int *) (LW_virtual + SERVO_0_BASE);
+    *(CTR_ptr) = write_val;
+
+    return 0;
+}
+
+int servo_feedback_R(void){
+
+    volatile int * servo_ptr;   // virtual address pointer to servos
+    unsigned int read_val;
+
+    servo_ptr = (unsigned int *) (LW_virtual + SERVO_1_BASE);
+    read_val = *(servo_ptr);
+    // printf("%d\n", read_val);
+    usleep(1000);
+    return read_val;
+}
+
+int servo_feedback_L(void){
+
     volatile int * servo_ptr;   // virtual address pointer to servos
     unsigned int read_val;
 
