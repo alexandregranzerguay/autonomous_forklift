@@ -75,11 +75,11 @@
 		.pushbuttons_export                     (<connected-to-pushbuttons_export>),                     //                 pushbuttons.export
 		.servo_avalon_0_pwm_out_new_signal      (<connected-to-servo_avalon_0_pwm_out_new_signal>),      //      servo_avalon_0_pwm_out.new_signal
 		.servo_avalon_0_pwm_response_new_signal (<connected-to-servo_avalon_0_pwm_response_new_signal>), // servo_avalon_0_pwm_response.new_signal
-		.servo_basic_0_gnd_new_signal           (<connected-to-servo_basic_0_gnd_new_signal>),           //           servo_basic_0_gnd.new_signal
-		.servo_basic_0_high_new_signal          (<connected-to-servo_basic_0_high_new_signal>),          //          servo_basic_0_high.new_signal
-		.servo_basic_0_pwm_out_new_signal       (<connected-to-servo_basic_0_pwm_out_new_signal>),       //       servo_basic_0_pwm_out.new_signal
+		.servo_avalon_1_pwm_out_new_signal      (<connected-to-servo_avalon_1_pwm_out_new_signal>),      //      servo_avalon_1_pwm_out.new_signal
+		.servo_avalon_1_pwm_response_new_signal (<connected-to-servo_avalon_1_pwm_response_new_signal>), // servo_avalon_1_pwm_response.new_signal
 		.slider_switches_export                 (<connected-to-slider_switches_export>),                 //             slider_switches.export
 		.system_pll_ref_clk_clk                 (<connected-to-system_pll_ref_clk_clk>),                 //          system_pll_ref_clk.clk
-		.system_pll_ref_reset_reset             (<connected-to-system_pll_ref_reset_reset>)              //        system_pll_ref_reset.reset
+		.system_pll_ref_reset_reset             (<connected-to-system_pll_ref_reset_reset>),             //        system_pll_ref_reset.reset
+		.servo_pos_avalon_0_pwm_out_new_signal  (<connected-to-servo_pos_avalon_0_pwm_out_new_signal>)   //  servo_pos_avalon_0_pwm_out.new_signal
 	);
 

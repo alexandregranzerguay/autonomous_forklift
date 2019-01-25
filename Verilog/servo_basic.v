@@ -2,8 +2,10 @@
 module servo_basic(input clock_clk, input reset_low, output reg pwm_out, output high, output gnd);
 	reg [31:0] count;
 	
-	localparam totalTime = 2000000;
-	localparam halfTime = 165000;
+	//localparam totalTime = 2000000;
+	//localparam halfTime = 165000;
+	localparam totalTime = 4000000;
+	localparam halfTime = 330000;
 	
 	// Move FSM when clock cycles
 	always @(posedge clock_clk or negedge reset_low) begin

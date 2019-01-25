@@ -8,35 +8,475 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA_lite/17.1
-vservo_avalon
-Z0 !s110 1547524268
+vAdd_16x16
+Z0 !s110 1548111511
 !i10b 1
-!s100 RW:IkW>MY500WW3C=l4<h3
-IBFT[MiefJ_?ogAkk;eN6c3
+!s100 M2amDiAZ0Hg7@[ck2AM9o1
+I__1K_h]C@S4icdiMAOTBY1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog
-w1547411368
-8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v
-FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v
-L0 2
+w1486439820
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_16x16.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_16x16.v
+L0 1
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1547524268.000000
-!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
+Z4 !s108 1548111511.000000
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_16x16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_16x16.v|
 !i113 1
 Z5 o-work work
 Z6 tCvgOpt 0
-vservo_basic
+n@add_16x16
+vAdd_CLA16
 R0
 !i10b 1
-!s100 _fSkA0zfO;AgWD0?[jiiT0
-IIo75mkdcWQ@G7JVWM]gnP3
+!s100 7jG>0Oc4V=e_M<_FcUlX41
+IOFR3WeEa38[4d215cJIQE3
 R1
 R2
-w1547240514
+w1486441076
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_CLA16.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_CLA16.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_CLA16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Add_CLA16.v|
+!i113 1
+R5
+R6
+n@add_@c@l@a16
+vALU
+R0
+!i10b 1
+!s100 <19HCHf8UU9JecbMd9EQz2
+IT6EoAW[=aFDn6`?25PG>`3
+R1
+R2
+w1487105847
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ALU.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ALU.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ALU.v|
+!i113 1
+R5
+R6
+n@a@l@u
+vBooth_multiplier
+R0
+!i10b 1
+!s100 kQkU<0`Yl;@8UoKJQULYz3
+Iz59=XLe5H5<H:93JKWUYf0
+R1
+R2
+w1487092333
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Booth_multiplier.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Booth_multiplier.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Booth_multiplier.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Booth_multiplier.v|
+!i113 1
+R5
+R6
+n@booth_multiplier
+vBusEncoder
+R0
+!i10b 1
+!s100 UFK1g=F^S=S3g4`UM^3PD3
+IfXf?95Sk0jOcTG]zkGJHJ1
+R1
+R2
+w1487043798
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoder.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoder.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoder.v|
+!i113 1
+R5
+R6
+n@bus@encoder
+vBusEncoderInputs
+R0
+!i10b 1
+!s100 QEI0`63OFTb2<O2N=6b7^2
+IdLS4h@64?ejjgzo7<HBSO0
+R1
+R2
+w1487042188
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoderInputs.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoderInputs.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoderInputs.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusEncoderInputs.v|
+!i113 1
+R5
+R6
+n@bus@encoder@inputs
+vBusMultiplexer
+R0
+!i10b 1
+!s100 bHAHKTHboj<WTbfa2Fh542
+IQjBa]j@89>A6U;Ig8e;0M0
+R1
+R2
+w1490751751
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusMultiplexer.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusMultiplexer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusMultiplexer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/BusMultiplexer.v|
+!i113 1
+R5
+R6
+n@bus@multiplexer
+vclockDivider
+R0
+!i10b 1
+!s100 Ree[zYV=`l<2^aLITN@Kj2
+Idol;RDIR@:>aL9zTOcA0H0
+R1
+R2
+w1491675526
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/clockDivider.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/clockDivider.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/clockDivider.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/clockDivider.v|
+!i113 1
+R5
+R6
+nclock@divider
+vConFF
+R0
+!i10b 1
+!s100 X]:14d7NHgLDM_VETHAef3
+I;i9j=>AoUjT;2JYGGhfSg2
+R1
+R2
+w1491328818
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ConFF.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ConFF.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ConFF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ConFF.v|
+!i113 1
+R5
+R6
+n@con@f@f
+vControlLogic
+R0
+!i10b 1
+!s100 @:?=AYlZU36?iJHF4QdIA3
+I6i<a9<:_YOlUz04KmhfGK0
+R1
+R2
+w1491328665
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ControlLogic.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ControlLogic.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ControlLogic.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/ControlLogic.v|
+!i113 1
+R5
+R6
+n@control@logic
+vInPort
+Z7 !s110 1548111512
+!i10b 1
+!s100 2Jm@N:SKlN?<TaiL_0Clz3
+IQ@z?o?cFJTd18nDM=RlU81
+R1
+R2
+w1491180817
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/InPort.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/InPort.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/InPort.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/InPort.v|
+!i113 1
+R5
+R6
+n@in@port
+vMDR
+R7
+!i10b 1
+!s100 jRA3QVHLhT:>lXXB=cEGX2
+I:h?AhnIVLaGhV=2;HP9B11
+R1
+R2
+w1486407157
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/MDR.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/MDR.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1548111512.000000
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/MDR.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/MDR.v|
+!i113 1
+R5
+R6
+n@m@d@r
+vOutPort
+R7
+!i10b 1
+!s100 ng`mURd@QcDmmYk3YV<eS3
+ITzPd[GPP:AkXVkTBJgfOW1
+R1
+R2
+w1489279755
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/OutPort.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/OutPort.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/OutPort.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/OutPort.v|
+!i113 1
+R5
+R6
+n@out@port
+vPhase3
+Z9 !s110 1548112016
+!i10b 1
+!s100 z`L:YO>4EN<S`Jm]eJ2OS2
+ImY017O_O^;U8bgz2Qo[NG2
+R1
+R2
+w1491080429
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/Phase3.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/Phase3.v
+Z10 L0 19
+R3
+r1
+!s85 0
+31
+Z11 !s108 1548112016.000000
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/Phase3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/Phase3.v|
+!i113 1
+R5
+R6
+n@phase3
+vPhase4
+R7
+!i10b 1
+!s100 fH7h23lXZI@c1Bn1ULB6C2
+I?BJ4FSEAmdn1`J9kWcc:I2
+R1
+R2
+w1491675608
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Phase4.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Phase4.v
+R10
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Phase4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/Phase4.v|
+!i113 1
+R5
+R6
+n@phase4
+vRAM
+R7
+!i10b 1
+!s100 o?S2]IPmiUIfBC5XdQjPm2
+IEE28?OcGHOdhYcJ6ZMohm0
+R1
+R2
+w1491178086
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/RAM_bb.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/RAM_bb.v
+L0 34
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/RAM_bb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/RAM_bb.v|
+!i113 1
+R5
+R6
+n@r@a@m
+vregN
+R7
+!i10b 1
+!s100 kH[zcHmkd7[>49e2Z2Q8Q3
+Iaob`:aTL0Hc2mT5ZMYbON2
+R1
+R2
+w1485911441
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regN.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regN.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regN.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regN.v|
+!i113 1
+R5
+R6
+nreg@n
+vregZ
+R7
+!i10b 1
+!s100 LGezgQgLeS2cOR^2zjb6i0
+I2O5Z91>=j@P;fJnY?f>JF1
+R1
+R2
+w1485909555
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZ.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZ.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZ.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZ.v|
+!i113 1
+R5
+R6
+nreg@z
+vregZero
+R7
+!i10b 1
+!s100 jh=oG3j2j5IR4k<HUZcCO1
+I?VNlzNS]I_UHN[RJO>m@@2
+R1
+R2
+w1491067928
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZero.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZero.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZero.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/regZero.v|
+!i113 1
+R5
+R6
+nreg@zero
+vSelEncodeLogic
+R7
+!i10b 1
+!s100 AiWGmk2YHi=hQ<HhVNEc[3
+I3LZk=h36]VK9GJ:?]nLeP3
+R1
+R2
+w1490898924
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SelEncodeLogic.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SelEncodeLogic.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SelEncodeLogic.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SelEncodeLogic.v|
+!i113 1
+R5
+R6
+n@sel@encode@logic
+vservo_avalon
+Z12 !s110 1548451335
+!i10b 1
+!s100 b79c6::JGLOE;G7W=<SlB1
+I[zSQH3GDT>Sa`PaC9fAnV3
+R1
+R2
+w1547765110
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z13 !s108 1548451335.000000
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_avalon.v|
+!i113 1
+R5
+R6
+vservo_basic
+Z14 !s110 1548451334
+!i10b 1
+!s100 8hNHT^jG<T[3gK6`hbioc0
+ID0]?zAKi2?MZ^IW[[_Nek1
+R1
+R2
+w1547840417
 8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v
 FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v
 L0 2
@@ -44,20 +484,20 @@ R3
 r1
 !s85 0
 31
-R4
+Z15 !s108 1548451334.000000
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_basic.v|
 !i113 1
 R5
 R6
 vservo_drive
-R0
+R14
 !i10b 1
-!s100 AO7ERXHiTcAd4;UETS<C81
-I<73e=>M[NZ4AUJ7k=A[>Y0
+!s100 GN`mR:3lMMY5nV=PN]Zh90
+IQ;3g5??VW7WETVh0LBR0U0
 R1
 R2
-w1547411258
+w1548451315
 8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v
 FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v
 L0 2
@@ -65,14 +505,14 @@ R3
 r1
 !s85 0
 31
-R4
+R15
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_drive.v|
 !i113 1
 R5
 R6
 vservo_feedback
-R0
+R12
 !i10b 1
 !s100 =YF5V:<0K:Ag_:inFZMDz3
 I6g;ikW^gC5z?n[U9[Q:zO0
@@ -86,20 +526,105 @@ R3
 r1
 !s85 0
 31
-R4
+R15
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_feedback.v|
 !i113 1
 R5
 R6
-vtest_bench
-R0
+vservo_pos_avalon
+R12
 !i10b 1
-!s100 :K<g9:_1EXR:GWIJ9h9HQ0
-I9JjL?S4CRY[N`1Q;7]DZh2
+!s100 3>:2NFLd8ln05FLK_zVPC3
+IlXC14NGW<aT[>i4XoWm^01
 R1
 R2
-w1547411938
+w1548450219
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_avalon.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_avalon.v
+L0 2
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_avalon.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_avalon.v|
+!i113 1
+R5
+R6
+vservo_pos_basic
+R12
+!i10b 1
+!s100 e[_ZQkEl92]cFZgY9cE:J2
+I:N8@>kX482SnE?ZaZQ1J03
+R1
+R2
+w1548448605
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_basic.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_basic.v
+L0 2
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_basic.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_basic.v|
+!i113 1
+R5
+R6
+vservo_pos_drive
+R12
+!i10b 1
+!s100 K7ZmJG9QKMWWgGe;048UD1
+IOJ0`DjIlc3CBnX::VKCOV3
+R1
+R2
+w1548451329
+8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_drive.v
+FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_drive.v
+L0 2
+R3
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_drive.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/servo_pos_drive.v|
+!i113 1
+R5
+R6
+vSevenSeg
+!s110 1548111513
+!i10b 1
+!s100 ]0NUnbLjhDefNZ0oAW8Z32
+IblgQg8HXZln7`SL3Lam3z3
+R1
+R2
+w1491178124
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SevenSeg.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SevenSeg.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SevenSeg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/SevenSeg.v|
+!i113 1
+R5
+R6
+n@seven@seg
+vtest_bench
+R14
+!i10b 1
+!s100 kWmWf6mh]PRD?DW3CZLgI3
+IzTzjk]=hAMTK`i0InAV^B2
+R1
+R2
+w1548451224
 8C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v
 FC:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v
 L0 2
@@ -107,9 +632,51 @@ R3
 r1
 !s85 0
 31
-R4
+R15
 !s107 C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Fourth Year/ELEC490/GitHub/autonomous_forklift/Verilog/tb.v|
+!i113 1
+R5
+R6
+vtest_bench_four
+!s110 1548111920
+!i10b 1
+!s100 =FP9Xo?R?V?MmeZ2MjU@m1
+I_?3V09T=BYVz;]?XcGomd1
+R1
+R2
+w1548111912
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/test_bench_four.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/test_bench_four.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1548111920.000000
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/test_bench_four.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 4/test_bench_four.v|
+!i113 1
+R5
+R6
+vtest_bench_three
+R9
+!i10b 1
+!s100 _Q^V6HAlV2<nHN?jKOn>k3
+I9^ab93^gW:ISFae6@UDQ?0
+R1
+R2
+w1491327478
+8C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/test_bench_three.v
+FC:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/test_bench_three.v
+L0 3
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/test_bench_three.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/RWajs/OneDrive/School/Third Year/Second Semester/ELEC 374/Project/Phase 3.4 (4 instr. with 3 logic)/test_bench_three.v|
 !i113 1
 R5
 R6

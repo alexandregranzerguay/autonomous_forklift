@@ -17,11 +17,11 @@ module DE10_Nano_Computer (
 	
 	// ARDUINO
 	// inout       [15:0] ARDUINO_IO,
-	output				PWM_OUT,
-	output				HIGH_OUT,
-	output				GND_OUT,
-	output				AVALON_PWM_OUT,
-	input					AVALON_PWM_IN,
+	output				AVALON1_PWM_OUT,
+	input					AVALON1_PWM_IN,
+	output				AVALON0_PWM_OUT,
+	input					AVALON0_PWM_IN,
+	output				AVALON2_PWM_OUT,
 	inout              ARDUINO_RESET_N,
 	
 	// GPIO
@@ -158,11 +158,11 @@ Computer_System The_System (
 
 	// Arduino GPIO
 	//.arduino_gpio_export				(ARDUINO_IO),
-	.servo_basic_0_gnd_new_signal				(PWM_OUT),
-	.servo_basic_0_high_new_signal				(HIGH_OUT),
-	.servo_basic_0_pwm_out_new_signal				(GND_OUT),
-	.servo_avalon_0_pwm_out_new_signal				(AVALON_PWM_OUT),
-	.servo_avalon_0_pwm_response_new_signal				(AVALON_PWM_IN),
+	.servo_avalon_0_pwm_out_new_signal				(AVALON0_PWM_OUT),
+	.servo_avalon_0_pwm_response_new_signal				(AVALON0_PWM_IN),
+	.servo_avalon_1_pwm_out_new_signal				(AVALON1_PWM_OUT),
+	.servo_avalon_1_pwm_response_new_signal				(AVALON1_PWM_IN),
+	.servo_pos_avalon_0_pwm_out_new_signal					(AVALON2_PWM_OUT),
 
 	// Arduino Reset_n
 	.arduino_reset_n_export				(ARDUINO_RESET_N),

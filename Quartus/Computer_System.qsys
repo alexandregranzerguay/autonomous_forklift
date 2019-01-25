@@ -625,12 +625,44 @@
          type = "int";
       }
    }
+   element servo_avalon_1
+   {
+      datum _sortIndex
+      {
+         value = "38";
+         type = "int";
+      }
+   }
+   element servo_avalon_1.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "20";
+         type = "String";
+      }
+   }
    element servo_basic_0
    {
       datum _sortIndex
       {
          value = "36";
          type = "int";
+      }
+   }
+   element servo_pos_avalon_0
+   {
+      datum _sortIndex
+      {
+         value = "39";
+         type = "int";
+      }
+   }
+   element servo_pos_avalon_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "24";
+         type = "String";
       }
    }
 }
@@ -710,18 +742,21 @@
    type="conduit"
    dir="end" />
  <interface
-   name="servo_basic_0_gnd"
-   internal="servo_basic_0.gnd"
+   name="servo_avalon_1_pwm_out"
+   internal="servo_avalon_1.pwm_out"
    type="conduit"
    dir="end" />
  <interface
-   name="servo_basic_0_high"
-   internal="servo_basic_0.high"
+   name="servo_avalon_1_pwm_response"
+   internal="servo_avalon_1.pwm_response"
    type="conduit"
    dir="end" />
+ <interface name="servo_basic_0_gnd" internal="servo_basic_0.gnd" />
+ <interface name="servo_basic_0_high" internal="servo_basic_0.high" />
+ <interface name="servo_basic_0_pwm_out" internal="servo_basic_0.pwm_out" />
  <interface
-   name="servo_basic_0_pwm_out"
-   internal="servo_basic_0.pwm_out"
+   name="servo_pos_avalon_0_pwm_out"
+   internal="servo_pos_avalon_0.pwm_out"
    type="conduit"
    dir="end" />
  <interface
@@ -1600,9 +1635,9 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="Nios2" kind="altera_nios2_gen2" version="17.1" enabled="1">
-  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="7" />
-  <parameter name="AUTO_CLK_RESET_DOMAIN" value="7" />
+ <module name="Nios2" kind="altera_nios2_gen2" version="17.1" enabled="0">
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="6" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="6" />
   <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <parameter name="bht_ramBlockType" value="Automatic" />
@@ -1613,7 +1648,7 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="nios2_floating_point" baseAddress="252" addressSpan="4" clockCycleType="VARIABLE" /></info>]]></parameter>
+  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
@@ -1782,7 +1817,7 @@
    name="Nios2_2nd_Core"
    kind="altera_nios2_gen2"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="7" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="7" />
   <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
@@ -1795,7 +1830,7 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="1" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="nios2_2nd_core_floating_point" baseAddress="252" addressSpan="4" clockCycleType="VARIABLE" /></info>]]></parameter>
+  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
@@ -1964,7 +1999,7 @@
    name="Nios2_2nd_Core_Floating_Point"
    kind="altera_nios_custom_instr_floating_point"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="useDivider" value="1" />
  </module>
  <module
@@ -2003,7 +2038,7 @@
    name="Nios2_Floating_Point"
    kind="altera_nios_custom_instr_floating_point"
    version="17.1"
-   enabled="1">
+   enabled="0">
   <parameter name="useDivider" value="1" />
  </module>
  <module
@@ -2168,7 +2203,13 @@
   <parameter name="video_in_clk_en" value="false" />
  </module>
  <module name="servo_avalon_0" kind="servo_avalon" version="1.0" enabled="1" />
- <module name="servo_basic_0" kind="servo_basic" version="1.0" enabled="1" />
+ <module name="servo_avalon_1" kind="servo_avalon" version="1.0" enabled="1" />
+ <module name="servo_basic_0" kind="servo_basic" version="1.0" enabled="0" />
+ <module
+   name="servo_pos_avalon_0"
+   kind="servo_pos_avalon"
+   version="1.0"
+   enabled="1" />
  <connection
    kind="avalon"
    version="17.1"
@@ -2685,6 +2726,24 @@
    end="servo_avalon_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_lw_axi_master"
+   end="servo_avalon_1.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0014" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_lw_axi_master"
+   end="servo_pos_avalon_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0018" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3270,6 +3329,16 @@
    kind="clock"
    version="17.1"
    start="System_PLL.sys_clk"
+   end="servo_avalon_1.clock_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="System_PLL.sys_clk"
+   end="servo_pos_avalon_0.clock_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="System_PLL.sys_clk"
    end="ARM_A9_HPS.f2h_axi_clock" />
  <connection
    kind="clock"
@@ -3654,6 +3723,16 @@
    kind="reset"
    version="17.1"
    start="ARM_A9_HPS.h2f_reset"
+   end="servo_avalon_1.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_reset"
+   end="servo_pos_avalon_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="ARM_A9_HPS.h2f_reset"
    end="VGA_Subsystem.sys_reset" />
  <connection
    kind="reset"
@@ -3815,6 +3894,16 @@
    version="17.1"
    start="System_PLL.reset_source"
    end="servo_basic_0.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="System_PLL.reset_source"
+   end="servo_avalon_1.reset_low" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="System_PLL.reset_source"
+   end="servo_pos_avalon_0.reset_low" />
  <connection
    kind="reset"
    version="17.1"
