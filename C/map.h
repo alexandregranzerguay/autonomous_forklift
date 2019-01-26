@@ -20,6 +20,11 @@ struct Coord {
 	int y;
 };
 
+struct Direction {
+	char dir;
+	int dist;
+};
+
 struct Tile {
 	char symbol; // symbol to display for text representation of the tile
 	int lid; // location id - if less than 0, not a valid location for packages

@@ -17,9 +17,14 @@ struct AStarHead {
 	int len;
 };
 
+struct Direction * path;
+
 struct AStarNode * astar_pop_node(struct AStarHead * list, struct AStarNode * node);
 int astar_push_node(struct AStarHead * list, struct AStarNode * node);
 int free_list(struct AStarHead * list);
+char get_direction(struct Coord curr, struct Coord prev);
+int get_path_length(struct AStarNode * node);
+int construct_path(struct AStarNode * node);
 
 struct AStarNode * find_lowest_f(struct AStarHead * list);
 
@@ -28,6 +33,6 @@ struct AStarNode * find_node(struct AStarHead * list, struct Coord coords);
 int visit_neighbour(struct AStarHead * open_list, struct AStarHead * closed_list, struct AStarNode * orig_node, struct Coord neighbour_coords, struct Coord end);
 int visit_neighbours(struct AStarHead * open_list, struct AStarHead * closed_list, struct AStarNode * orig_node, struct Coord end);
 
-char * find_path(struct Coord start, struct Coord end);
+int find_path(struct Coord start, struct Coord end);
 
 #endif

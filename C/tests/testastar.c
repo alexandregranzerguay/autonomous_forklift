@@ -6,7 +6,8 @@
 
 struct Coord start_coord;
 struct Coord end_coord;
-struct Coord test_coord;
+struct Coord test_coord0;
+struct Coord test_coord1;
 struct AStarHead list1;
 struct AStarNode * a1;
 struct AStarNode * b1;
@@ -16,6 +17,12 @@ struct AStarNode * start_node;
 
 struct AStarHead open_list;
 struct AStarHead closed_list;
+
+struct Direction * path;
+
+struct Direction test_dir;
+
+int path_len;
 
 void setUp() {
 	start_coord.x = 0;
@@ -100,19 +107,40 @@ void test_utilities() {
 	
 	TEST_ASSERT_TRUE(find_lowest_f(&list1) == d1);
 	
-	test_coord.x = 1;
-	test_coord.y = 1;
-	TEST_ASSERT_TRUE(find_node(&list1, test_coord) == b1);
+	test_coord0.x = 1;
+	test_coord0.y = 1;
+	TEST_ASSERT_TRUE(find_node(&list1, test_coord0) == b1);
 	
-	test_coord.x = 3;
-	test_coord.y = 3;
-	TEST_ASSERT_TRUE(find_node(&list1, test_coord) == NULL);
+	test_coord0.x = 3;
+	test_coord0.y = 3;
+	TEST_ASSERT_TRUE(find_node(&list1, test_coord0) == NULL);
 	
 	// Test on empty list
-	TEST_ASSERT_TRUE(find_node(&open_list, test_coord) == NULL)
+	TEST_ASSERT_TRUE(find_node(&open_list, test_coord0) == NULL)
+	
+	// Test correct direction returning
+	test_coord0.x = 5;
+	test_coord0.y = 5;
+	test_coord1.x = 6;
+	test_coord1.y = 5;
+	TEST_ASSERT_EQUAL('e', get_direction(test_coord1, test_coord0));
+	
+	test_coord1.x = 5;
+	test_coord1.y = 6;
+	TEST_ASSERT_EQUAL('s', get_direction(test_coord1, test_coord0));
+	
+	test_coord1.x = 4;
+	test_coord1.y = 5;
+	TEST_ASSERT_EQUAL('w', get_direction(test_coord1, test_coord0));
+	
+	test_coord1.x = 5;
+	test_coord1.y = 4;
+	TEST_ASSERT_EQUAL('n', get_direction(test_coord1, test_coord0));
 }
 
 void test_pathfinding() {
+	int i;
+	int path_len;
 	TEST_ASSERT_FALSE(init_map("maptest.txt"));
 	// FALSE FOR NOW, CHANGE TO TRUE AFTER PATH CONSTRUCTION
 	end_coord.x = 10;
@@ -129,18 +157,34 @@ void test_pathfinding() {
 	TEST_ASSERT_EQUAL(1, open_list.len);
 	
 	// This is start_node's coords, but 1 added to the y coordinate
-	test_coord.x = 1;
-	test_coord.y = 2;
+	test_coord0.x = 1;
+	test_coord0.y = 2;
 	
-	TEST_ASSERT_FALSE(visit_neighbour(&open_list, &closed_list, start_node, test_coord, end_coord));
+	TEST_ASSERT_FALSE(visit_neighbour(&open_list, &closed_list, start_node, test_coord0, end_coord));
 	// The neighbour should have had a node created and added to the open_list
 	TEST_ASSERT_EQUAL(2, open_list.len);
-	TEST_ASSERT_TRUE(find_node(&open_list, test_coord));
-	test_coord.x = 1;
-	test_coord.y = 1;
-	TEST_ASSERT_TRUE(find_node(&open_list, test_coord));
+	TEST_ASSERT_TRUE(find_node(&open_list, test_coord0));
+	test_coord0.x = 1;
+	test_coord0.y = 1;
+	TEST_ASSERT_TRUE(find_node(&open_list, test_coord0));
 	TEST_ASSERT_FALSE(free_list(&open_list));
 	TEST_ASSERT_EQUAL(0, open_list.len);
+	
+	start_coord.x = 7;
+	start_coord.y = 4;
+	end_coord.x = 13;
+	end_coord.y = 18;
+	path_len = find_path(start_coord, end_coord);
+	TEST_ASSERT_EQUAL(2, path_len);
+	test_dir.dir = 's';
+	test_dir.dist = 14;
+	TEST_ASSERT_EQUAL(test_dir.dir, path[0].dir);
+	TEST_ASSERT_EQUAL(test_dir.dist, path[0].dist);
+	
+	test_dir.dir = 'e';
+	test_dir.dist = 7;
+	TEST_ASSERT_EQUAL(test_dir.dir, path[1].dir);
+	TEST_ASSERT_EQUAL(test_dir.dist, path[1].dist);
 }
 
 int main(void) {

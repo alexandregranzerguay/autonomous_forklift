@@ -53,7 +53,9 @@ int astar_push_node(struct AStarHead * list, struct AStarNode * node) {
 int free_list(struct AStarHead * list) {
 	struct AStarNode * curr_node;
 	struct AStarNode * next_node;
-	
+	if(list == NULL) {
+		return 0;
+	}
 	curr_node = list->head;
 	if(curr_node == NULL) {
 		return 0;
@@ -176,9 +178,99 @@ int visit_neighbours(struct AStarHead * open_list, struct AStarHead * closed_lis
 		check_coords.y = orig_node_coords.y + 1;
 		visit_neighbour(open_list, closed_list, orig_node, check_coords, end);
 	}
+	return 0;
 }
 
-char * find_path(struct Coord start, struct Coord end) {
+char get_direction(struct Coord curr, struct Coord prev) {
+	if(curr.x == prev.x + 1) {
+		return 'e';
+	} else if (curr.x == prev.x - 1) {
+		return 'w';
+	} else if (curr.y == prev.y + 1) {
+		return 's';
+	} else if (curr.y == prev.y - 1) {
+		return 'n';
+	} else {
+		// this means the two coordinates are not neighbouring, so there is no valid direction between the two
+		return 'x';
+	}
+}
+
+int get_path_length(struct AStarNode * node) {
+	// Start with an invalid direction
+	char curr_dir;
+	char next_dir;
+	int len;
+	
+	if(node->parent_tile_node == NULL) {
+		return 0;
+	}
+	
+	curr_dir = get_direction(node->tile->coords, node->parent_tile_node->tile->coords);
+	len = 1;
+	
+	while(node->parent_tile_node != NULL) {
+		next_dir = get_direction(node->tile->coords, node->parent_tile_node->tile->coords);
+		if(next_dir == 'x') {
+			printf("Invalid direction\n");
+			return -1;
+		}
+		// Since the direction struct has a direction and distance, each time the robot changes directions, one struct must be added
+		if(next_dir != curr_dir) {
+			curr_dir = next_dir;
+			len++;
+		}
+		node = node->parent_tile_node;
+	}
+	return len;
+}
+
+/* Construct path first determines how much memory must be allocated by walking
+through parent_tile_node pointers. Then it gets the first direction between the last node and its parent
+and initializes the distance for that direction to 1. */
+int construct_path(struct AStarNode * node) {
+	int i, len;
+	
+	len = get_path_length(node);
+	
+	struct Direction curr_dir;
+	
+	char next_dir;
+	if(len == -1) {
+		return -1;
+	}
+	i = len - 1;
+	path = (struct Direction *) malloc(len * sizeof(struct Direction));
+	
+	curr_dir.dir = get_direction(node->tile->coords, node->parent_tile_node->tile->coords);
+	curr_dir.dist = 1;
+	
+	while(node->parent_tile_node != NULL && i >= 0) {
+		next_dir = get_direction(node->tile->coords, node->parent_tile_node->tile->coords);
+		if(next_dir == 'x') {
+			printf("Invalid direction");
+			return -1;
+		}
+		// Since the direction struct has a direction and distance, each time the robot changes directions, one struct must be added
+		if(next_dir != curr_dir.dir) {
+			// The current direction is done, so the direction and number of tiles will be added to the path array (in reverse order, as the node traversal begins from the end coordinate)
+			path[i].dir = curr_dir.dir;
+			path[i].dist = curr_dir.dist;
+			curr_dir.dir = next_dir;
+			curr_dir.dist = 0;
+			i--;
+		}
+		curr_dir.dist++;
+		node = node->parent_tile_node;
+	}
+	// Final direction must be added, as there will be no direction change
+	path[0].dir = curr_dir.dir;
+	path[0].dist = curr_dir.dist;
+
+	return len;
+}
+
+int find_path(struct Coord start, struct Coord end) {
 	struct AStarHead open_list;
 	struct AStarHead closed_list;
 	
@@ -189,19 +281,27 @@ char * find_path(struct Coord start, struct Coord end) {
 	struct Coord curr_node_coords;
 	struct Coord check_coords;
 	
+	int path_len;
+	
 	// Create the initial node for the starting coordinates
 	open_list.head = (struct AStarNode *) malloc(sizeof(struct AStarNode));
 	open_list.len = 1;
 	open_list.head->tile = &(map[start.y][start.x]);
 	open_list.head->g = 0;
 	open_list.head->h = abs(start.x - end.x) + abs(start.y - end.y);
+	open_list.head->next = NULL;
+	open_list.head->parent_tile_node = NULL;
+	
+	closed_list.head = NULL;
+	closed_list.len = 0;
 	
 	while(open_list.head != NULL) {
 		curr_node = find_lowest_f(&open_list);
 		if((curr_node->tile->coords.x == end.x) && (curr_node->tile->coords.y == end.y)) {
-			//return construct_path(curr_node);
-			printf("REACHED THE END. TODO: CONSTRUCT PATHFINDING DIRECTIONS");
-			return NULL;
+			path_len = construct_path(curr_node);
+			free_list(&open_list);
+			free_list(&closed_list);
+			return path_len;
 		}
 		
 		visit_neighbours(&open_list, &closed_list, curr_node, end);
@@ -209,7 +309,9 @@ char * find_path(struct Coord start, struct Coord end) {
 		// if(astar_push_node(&closed_list, curr_node))
 		astar_push_node(&closed_list, curr_node);
 	}
+	
 	// If the loop is exited, it means no valid path was found
-	// free_lists(&open_list, &closed_list);
-	return NULL;
+	free_list(&open_list);
+	free_list(&closed_list);
+	return 0;
 }
