@@ -1,5 +1,5 @@
 #include "controls.h"
-
+#include "servoconfig.h"
 // add missing set values
 #define angle_overflow
 #define pi=3.1415
