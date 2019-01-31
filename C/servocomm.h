@@ -1,5 +1,5 @@
-#ifndef SERVOCONFIG_H_
-#define SERVOCONFIG_H_
+#ifndef SERVOCOMM_H_
+#define SERVOCOMM_H_
 
 #include<stdio.h>
 #include<unistd.h>
@@ -14,8 +14,8 @@ void close_physical (int);
 int unmap_physical (void *, unsigned int);
 int init_servos(void);
 int close_servos(void);
-int servo_write_R(int argc, char **argv);
-int servo_write_L(int argc, char **argv);
+int servo_write_R(int pulse);
+int servo_write_L(int pulse);
 int servo_feedback_L(void);
 int servo_feedback_R(void);
 

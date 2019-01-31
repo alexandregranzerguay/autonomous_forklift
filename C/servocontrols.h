@@ -1,9 +1,9 @@
-#ifndef CONTROLS_H_
-#define CONTROLS_H_
+#ifndef SERVOCONTROLS_H_
+#define SERVOCONTROLS_H_
 
 #include <stdio.h>
 #include <math.h>
-#include "servoconfig.h"
+#include "servocomm.h"
 
 float distance_to_rotations(float distance);
 
@@ -15,6 +15,8 @@ int drive_backwards(float distance, int speed);
 
 int rotate_left(int speed, int angle);
 
-int rotate_right(int speed);
+int rotate_right(int speed, int angle);
 
-#endif // CONTROLS_H_
+int speed_to_pwm(int speed);
+
+#endif // SERVOCONTROLS_H_

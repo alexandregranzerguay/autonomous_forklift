@@ -1,4 +1,4 @@
-#include "servoconfig.h"
+#include "servocomm.h"
 
 int fd = -1;               // used to open /dev/mem for access to physical addresses
 void *LW_virtual;          // used to map physical addresses for the light-weight bridge
@@ -18,16 +18,16 @@ int close_servos(void){
 }
 
 // This program writes a PWM value to servos
-int servo_write_R(int argc, char **argv){
-    if(argc < 2) {
-	    printf("Please supply argument for value to write to servo");
-	    return 0;
-    }
+int servo_write_R(int pulse){
+    // if(argc < 2) {
+	//     printf("Please supply argument for value to write to servo");
+	//     return 0;
+    // }
 
     volatile int * CTR_ptr;   // virtual address pointer to servos
 
     // Value to be written on servo
-    int write_val = atoi(argv[1]);
+    int write_val = pulse;
 
     // Set virtual address pointer to I/O port
     CTR_ptr = (unsigned int *) (LW_virtual + SERVO_1_BASE);
@@ -37,16 +37,16 @@ int servo_write_R(int argc, char **argv){
 }
 
 // This program writes a PWM value to servos
-int servo_write_L(int argc, char **argv){
-    if(argc < 2) {
-	    printf("Please supply argument for value to write to servo");
-	    return 0;
-    }
+int servo_write_L(int pulse){
+    // if(argc < 2) {
+	//     printf("Please supply argument for value to write to servo");
+	//     return 0;
+    // }
 
     volatile int * CTR_ptr;   // virtual address pointer to servos
 
     // Value to be written on servo
-    int write_val = atoi(argv[1]);
+    int write_val = pulse;
 
     // Set virtual address pointer to I/O port
     CTR_ptr = (unsigned int *) (LW_virtual + SERVO_0_BASE);
