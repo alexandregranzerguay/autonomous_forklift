@@ -5,13 +5,17 @@
 #include <math.h>
 #include "servocomm.h"
 
-float distance_to_rotations(float distance);
+float distance_to_rotations(int distance);
 
 float angle_to_rotations(int angle);
 
-int drive_forward(float distance, int speed);
+int filter_feedback_R(int lastVal);
 
-int drive_backwards(float distance, int speed);
+int filter_feedback_L(int lastVal);
+
+int drive_forward(int speed, int distance);
+
+int drive_backwards(int speed, int distance);
 
 int rotate_left(int speed, int angle);
 
