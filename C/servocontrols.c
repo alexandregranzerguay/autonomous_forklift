@@ -99,7 +99,7 @@ int drive(int speed, int units, char dir){
 	servo_write_L(pulse_L);
     servo_write_R(pulse_R);
 	
-	while(!(right_done && left_done)) {
+	/*while(!(right_done && left_done)) {
 		new_feedback_L = filter_feedback_L(last_feedback_L);
 		new_feedback_R = filter_feedback_R(last_feedback_R);
 		// if the new is less, that means the feedback wrapped around
@@ -129,7 +129,8 @@ int drive(int speed, int units, char dir){
 		last_feedback_L = new_feedback_L;
 		last_feedback_R = new_feedback_R;
 		usleep(1000);
-	}
+	}*/
+	usleep(1000000);
     return 0;
 }
 
