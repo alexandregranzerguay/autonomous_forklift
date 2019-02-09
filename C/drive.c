@@ -1,7 +1,8 @@
+#include "drive.h"
 #include "servocontrols.h"
 #include "astar.h"
 
-char change_dir(new_dir, curr_dir) {
+char change_dir(char new_dir, char curr_dir) {
 	if(new_dir == 'n' && curr_dir == 'e')
 		{
 		  drive(2, 90, 'l');
@@ -68,14 +69,16 @@ int drop_package() {
 	drive(2, PALLET_DIST, 'f');
 	move_positional(-40000);
 	drive(2, PALLET_DIST, 'b');
+	move_positional(40000);
 }
 
-int drivePath(int path_length) {
-	for(i = 0; i < total_length; i++)
+int drive_path(int path_length, char * robot_direction) {
+	int i;
+	for(i = 0; i < path_length; i++)
 	{
-		char direction = path[i]->dir;
-		int num_tiles = path[i]->dist;
-		robot_direction = change_dir(direction, robot_direction);
+		char direction = path[i].dir;
+		int num_tiles = path[i].dist;
+		*robot_direction = change_dir(direction, *robot_direction);
 		drive(2, num_tiles, 'f');
 	}
 }

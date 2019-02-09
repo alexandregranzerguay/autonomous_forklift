@@ -243,7 +243,7 @@ int construct_path(struct AStarNode * node) {
 	path = (struct Direction *) malloc(len * sizeof(struct Direction));
 	
 	curr_dir.dir = get_direction(node->tile->coords, node->parent_tile_node->tile->coords);
-	curr_dir.dist = 1;
+	curr_dir.dist = 0;
 	
 	while(node->parent_tile_node != NULL && i >= 0) {
 		next_dir = get_direction(node->tile->coords, node->parent_tile_node->tile->coords);

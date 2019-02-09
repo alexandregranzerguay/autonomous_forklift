@@ -5,8 +5,8 @@
 #include <stdlib.h> 
 #include <string.h>
 
-#define MAP_X 20
-#define MAP_Y 20
+#define MAP_X 15
+#define MAP_Y 6
 #define MAP_FILENAME "map.txt"
 #define MAX_LOCATIONS 5
 #define LOCATION_FILENAME "loc.txt"
@@ -28,7 +28,7 @@ struct Direction {
 struct Location {
 	char dir;
 	struct Coord loc;
-}
+};
 
 struct Tile {
 	char symbol; // symbol to display for text representation of the tile

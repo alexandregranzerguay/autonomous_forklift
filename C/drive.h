@@ -1,4 +1,4 @@
-##ifndef DRIVE_H_
+#ifndef DRIVE_H_
 #define DRIVE_H_
 
 #include <stdio.h>
@@ -7,9 +7,9 @@
 
 #define PALLET_DIST 20
 
-char change_dir(new_dir, curr_dir);
+char change_dir(char new_dir, char curr_dir);
 int get_package();
 int drop_package();
-int drivePath(int path_length);
+int drive_path(int path_length, char * robot_direction);
 
 #endif

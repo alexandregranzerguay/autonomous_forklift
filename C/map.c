@@ -96,11 +96,11 @@ int init_locs() {
 		location_list[i].loc.x = -1;
 		location_list[i].loc.y = -1;
 	}
-	location_list[0].dir = 's';
+	location_list[0].dir = 'w';
 	location_list[0].loc.x = 1;
-	location_list[0].loc.y = 4;
+	location_list[0].loc.y = 2;
 	
-	location_list[1].dir = 'w';
+	location_list[1].dir = 'e';
 	location_list[1].loc.x = 4;
 	location_list[1].loc.y = 4;
 }
@@ -112,7 +112,7 @@ int init_packs() {
 		package_list[i].loc.x = -1;
 		package_list[i].loc.y = -1;
 	}
-	package_list[0].dir = 's';
+	package_list[0].dir = 'w';
 	package_list[0].loc.x = 1;
-	package_list[0].loc.y = 4;
+	package_list[0].loc.y = 2;
 }

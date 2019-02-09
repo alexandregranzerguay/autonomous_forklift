@@ -130,7 +130,9 @@ int drive(int speed, int units, char dir){
 		last_feedback_R = new_feedback_R;
 		usleep(1000);
 	}*/
-	usleep(1000000);
+	usleep(units * 1000000);
+	servo_write_L(OFF);
+    servo_write_R(OFF);
     return 0;
 }
 
