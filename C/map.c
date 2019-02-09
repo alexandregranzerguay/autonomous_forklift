@@ -89,10 +89,30 @@ int tokenize_locs_packs(char * str, unsigned int strsize, int * arr) {
 	
 }
 
-int init_locs(char const * const fileName) {
+int init_locs() {
+	int i;
+	for(i = 0; i < MAX_LOCATIONS; i++) {
+		location_list[i].dir = 'x';
+		location_list[i].loc.x = -1;
+		location_list[i].loc.y = -1;
+	}
+	location_list[0].dir = 's';
+	location_list[0].loc.x = 1;
+	location_list[0].loc.y = 4;
 	
+	location_list[1].dir = 'w';
+	location_list[1].loc.x = 4;
+	location_list[1].loc.y = 4;
 }
 
-int init_packs(char const * const fileName) {
-	
+int init_packs() {
+	int i;
+	for(i = 0; i < MAX_PACKAGES; i++) {
+		package_list[i].dir = 'x';
+		package_list[i].loc.x = -1;
+		package_list[i].loc.y = -1;
+	}
+	package_list[0].dir = 's';
+	package_list[0].loc.x = 1;
+	package_list[0].loc.y = 4;
 }
