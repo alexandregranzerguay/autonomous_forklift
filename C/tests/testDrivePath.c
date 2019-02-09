@@ -16,7 +16,7 @@ int i;
 	{
 		char direction = path[i]->dir;
 		int num_tiles = path[i]->dist;
-		if(direction == 'e && robot_direction == 'e')
+		if(direction == 'e' && robot_direction == 'e')
 		{
 		// no rotation
 		}
@@ -98,11 +98,16 @@ int i;
 		  rotate_right(10, 90);  
 		  robot_direction = 'w';
 		}
+		if(i == total_length - 1){
+			move_positional(-40000);
+		}
 		drive_forward(10, num_tiles);
-		
+		if(i == total_length - 1){
+			move_positional(40000);
+		}
 	}
 
 
 }
 
-test failure case
+//test failure case
