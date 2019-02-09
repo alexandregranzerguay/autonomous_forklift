@@ -16,6 +16,10 @@ int get_instructions(){
  
 int main(int argc , char *argv[])
 {
+	Coord robot_loc;
+	robot_loc->x = 1;
+	robot_loc->y = 4;
+	robot_direction = 'n'; 
 	int client_sock, read_size, argsize;
 	char client_message[MSG_SIZE];
 	char args[MAX_ARGS][MAX_ARG_SIZE];
@@ -41,8 +45,14 @@ int main(int argc , char *argv[])
 		if(args[0] == "move" && args[1] == "package" && args[3] == "to" && args[4] == "location"){
 			int packageid = atoi(args[2]);
 			int locationid = atoi(args[5]);
-			Location loc_coord = location_list[locationid];
-			Location pkg_coord = package_list[packageid];
+			Location loc = location_list[locationid];
+			Location pkg = package_list[packageid];	
+			int total_length = find_path(robot_loc, pkg->loc);
+			robot_loc->x = pkg->loc->x;
+			robot_loc->y = pkg->loc->y;
+			int total_length = find_path(robot_loc, loc->loc);
+			robot_loc->x = loc->loc->x;
+			robot_loc->y = loc->loc->y;
 			
 		}                //move package 0 to location 1
 		write(client_sock , "Message recieved\n" , 17);
