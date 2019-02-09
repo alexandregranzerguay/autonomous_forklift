@@ -67,6 +67,17 @@ int servo_feedback_L(void){
     return read_val;
 }
 
+
+int servo_write_P(int pulse){
+    volatile int * pos_ptr;   // virtual address pointer to servos
+	
+    // Set virtual address pointer to I/O port
+    pos_ptr = (unsigned int *) (LW_virtual + SERVO_POS_BASE);
+    *(pos_ptr) = pulse;
+
+    return 0;
+}
+
 // Open /dev/mem, if not already done, to give access to physical addresses
 int open_physical (int fd)
 {

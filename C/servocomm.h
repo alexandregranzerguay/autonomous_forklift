@@ -25,5 +25,6 @@ int servo_write_R(int pulse);
 int servo_write_L(int pulse);
 int servo_feedback_L(void);
 int servo_feedback_R(void);
+int servo_write_P(int pulse);
 
 #endif

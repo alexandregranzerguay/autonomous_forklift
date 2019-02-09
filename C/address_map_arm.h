@@ -15,6 +15,7 @@
 
 #define SERVO_0_BASE		0x00000010
 #define SERVO_1_BASE		0x00000014
+#define SERVO_POS_BASE		0x00000018
 
 #define LEDR_BASE               0x00000000
 #define SW_BASE                0x00000040

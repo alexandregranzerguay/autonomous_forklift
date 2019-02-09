@@ -71,3 +71,7 @@ int servo_feedback_L(void){
 	return l_count;
 }
 
+int servo_write_P(int pulse) {
+	return 0;
+}
+

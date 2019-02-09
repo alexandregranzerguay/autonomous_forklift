@@ -2,10 +2,10 @@
 
 int main(){
 	init_servos();
-	drive_forward(1, 1);
-	drive_backwards(1, 1);
-	rotate_left(1, 50);
-	rotate_right(1, 50);
+	drive(1, 150, 'f');
+	drive(1, 150, 'b');
+	drive(1, 150, 'l');
+	drive(1, 150, 'r');
 	close_servos();
 	return 0;	
 }
