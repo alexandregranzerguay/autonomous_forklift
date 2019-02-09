@@ -19,38 +19,28 @@ int close_servos(void){
 
 // This program writes a PWM value to servos
 int servo_write_R(int pulse){
-    // if(argc < 2) {
-	//     printf("Please supply argument for value to write to servo");
-	//     return 0;
-    // }
-
-    volatile int * CTR_ptr;   // virtual address pointer to servos
+    volatile int * servo_ptr;   // virtual address pointer to servos
 
     // Value to be written on servo
     int write_val = pulse;
 
     // Set virtual address pointer to I/O port
-    CTR_ptr = (unsigned int *) (LW_virtual + SERVO_1_BASE);
-    *(CTR_ptr) = write_val;
+    servo_ptr = (unsigned int *) (LW_virtual + SERVO_0_BASE);
+    *(servo_ptr) = pulse;
 
     return 0;
 }
 
 // This program writes a PWM value to servos
 int servo_write_L(int pulse){
-    // if(argc < 2) {
-	//     printf("Please supply argument for value to write to servo");
-	//     return 0;
-    // }
-
-    volatile int * CTR_ptr;   // virtual address pointer to servos
+    volatile int * servo_ptr;   // virtual address pointer to servos
 
     // Value to be written on servo
     int write_val = pulse;
 
     // Set virtual address pointer to I/O port
-    CTR_ptr = (unsigned int *) (LW_virtual + SERVO_0_BASE);
-    *(CTR_ptr) = write_val;
+    servo_ptr = (unsigned int *) (LW_virtual + SERVO_1_BASE);
+    *(servo_ptr) = pulse;
 
     return 0;
 }
@@ -60,10 +50,9 @@ int servo_feedback_R(void){
     volatile int * servo_ptr;   // virtual address pointer to servos
     unsigned int read_val;
 
-    servo_ptr = (unsigned int *) (LW_virtual + SERVO_1_BASE);
+    servo_ptr = (unsigned int *) (LW_virtual + SERVO_0_BASE);
     read_val = *(servo_ptr);
-    // printf("%d\n", read_val);
-    usleep(1000);
+
     return read_val;
 }
 
@@ -72,11 +61,21 @@ int servo_feedback_L(void){
     volatile int * servo_ptr;   // virtual address pointer to servos
     unsigned int read_val;
 
-    servo_ptr = (unsigned int *) (LW_virtual + SERVO_0_BASE);
+    servo_ptr = (unsigned int *) (LW_virtual + SERVO_1_BASE);
     read_val = *(servo_ptr);
-    // printf("%d\n", read_val);
-    usleep(1000);
+
     return read_val;
+}
+
+
+int servo_write_P(int pulse){
+    volatile int * pos_ptr;   // virtual address pointer to servos
+	
+    // Set virtual address pointer to I/O port
+    pos_ptr = (unsigned int *) (LW_virtual + SERVO_POS_BASE);
+    *(pos_ptr) = pulse;
+
+    return 0;
 }
 
 // Open /dev/mem, if not already done, to give access to physical addresses

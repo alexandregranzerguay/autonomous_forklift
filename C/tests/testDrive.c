@@ -1,9 +1,9 @@
-#include "controls.h"
+#include "../servocontrols.h"
 
 int main(){
-	
-	drive_forward(1.0, 1);
-	drive_backwards(1.0, 1);
-	
+	init_servos();
+	drive_forward(1, 1);
+	drive_backwards(1, 1);
+	close_servos();
 return 0;	
 }
