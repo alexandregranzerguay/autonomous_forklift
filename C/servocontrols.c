@@ -35,7 +35,7 @@ float angle_to_rotations(int angle){
 }
 
 int speed_to_pwm(int speed){
-    return (speed * 5000);
+    return (speed * 7500);
 }
 
 // Sometimes the feedback has an unusual value returned, this is to filter out those misreadings
@@ -57,80 +57,36 @@ int filter_feedback_L(int lastVal) {
 	}
 }
 
-int drive(int speed, int units, char dir){
-	int last_feedback_L = servo_feedback_L();
-    int last_feedback_R = servo_feedback_R();
-	
-	int new_feedback_L = last_feedback_L;
-	int new_feedback_R = last_feedback_R;
-	
-	int feedback_count_L = 0;
-	int feedback_count_R = 0;
+int drive(int speed, float units, char dir){
 	
 	int pulse_L = OFF;
 	int pulse_R = OFF;
 	
-	int left_done = 0;
-	int right_done = 0;
-	
-    //drive a certain number of units using feedback
-	float req_units = 0;
+	int unit_time = 0;
 	
     // set wheel rotations based on the direction. If it's forwards or backwards, translate a distance to a number of units
 	// if it's left or right, translate an angle to a number of units
 	if(dir == 'f') {
-		req_units = distance_to_rotations(units) * (FEEDBACK_MAX - FEEDBACK_MIN);
+		unit_time = UNIT_TIME_FORWARD;
 		pulse_L += speed_to_pwm(speed);
-		pulse_R -= speed_to_pwm(speed);
+		pulse_R -= (speed_to_pwm(speed) + RIGHT_ADJUST_FORWARD);
 	} else if (dir == 'b') {
-		req_units = distance_to_rotations(units) * (FEEDBACK_MAX - FEEDBACK_MIN);
-		pulse_L -= speed_to_pwm(speed);
+		unit_time = UNIT_TIME_BACKWARD;
+		pulse_L -= (speed_to_pwm(speed) + LEFT_ADJUST_BACKWARD);
 		pulse_R += speed_to_pwm(speed);
 	} else if (dir == 'r') {
-		req_units = angle_to_rotations(units) * (FEEDBACK_MAX - FEEDBACK_MIN);
+		unit_time = UNIT_TIME_RIGHT;
 		pulse_L += speed_to_pwm(speed);
 		pulse_R += speed_to_pwm(speed);
 	} else if (dir == 'l') {
-		req_units = angle_to_rotations(units) * (FEEDBACK_MAX - FEEDBACK_MIN);
+		unit_time = UNIT_TIME_LEFT;
 		pulse_L -= speed_to_pwm(speed);
 		pulse_R -= speed_to_pwm(speed);
 	}
 	
 	servo_write_L(pulse_L);
     servo_write_R(pulse_R);
-	
-	/*while(!(right_done && left_done)) {
-		new_feedback_L = filter_feedback_L(last_feedback_L);
-		new_feedback_R = filter_feedback_R(last_feedback_R);
-		// if the new is less, that means the feedback wrapped around
-		if(!left_done) {
-			if(abs(new_feedback_L - last_feedback_L) > WRAP_VALUE) {
-			feedback_count_L += ((FEEDBACK_MAX - max_val(last_feedback_L, new_feedback_L)) + (min_val(last_feedback_L, new_feedback_L) - FEEDBACK_MIN));
-			} else {
-				feedback_count_L += abs(new_feedback_L - last_feedback_L);
-			}
-		}
-		if(!right_done) {
-			if(abs(new_feedback_R - last_feedback_R) > WRAP_VALUE) {
-			feedback_count_R += ((FEEDBACK_MAX - max_val(last_feedback_R, new_feedback_R)) + (min_val(last_feedback_R, new_feedback_R) - FEEDBACK_MIN));
-			} else {
-				feedback_count_R += abs(new_feedback_R - last_feedback_R);
-			}
-		}
-		
-		if((feedback_count_R > req_units) && !right_done) {
-			servo_write_R(OFF);
-			right_done = 1;
-		}
-		if((feedback_count_L > req_units) && !left_done) {
-			servo_write_L(OFF);
-			left_done = 1;
-		}
-		last_feedback_L = new_feedback_L;
-		last_feedback_R = new_feedback_R;
-		usleep(1000);
-	}*/
-	usleep(units * 1000000);
+	usleep((int) (units * unit_time));
 	servo_write_L(OFF);
     servo_write_R(OFF);
     return 0;

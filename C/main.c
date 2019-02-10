@@ -19,6 +19,7 @@ int get_instructions(){
  
 int main(int argc , char *argv[])
 {
+	init_servos();
 	struct Coord robot_loc;
 	robot_loc.x = 1;
 	robot_loc.y = 4;
@@ -83,6 +84,7 @@ int main(int argc , char *argv[])
 		}                //move package 0 to location 1
 		write(client_sock , "Message recieved\n" , 17);
     }
+	close_servos();
     
     if(read_size == 0)
     {

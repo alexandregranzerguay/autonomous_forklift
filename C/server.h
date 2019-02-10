@@ -8,7 +8,7 @@
 #include<unistd.h>    //write
 
 #define MSG_SIZE 1024
-#define PORT 8888
+#define PORT 8889
 #define MAX_ARGS 10
 #define MAX_ARG_SIZE 11
 
